@@ -1,13 +1,11 @@
 # AwesomeKeyPath
-
-## AwesomeKeyPath/DataBinding
 A data binding library with Swift KeyPath
 
 
 ### Installation
 
 ```ruby
-pod 'AwesomeKeyPath/DataBinding'
+pod 'AwesomeKeyPath'
 ```
 
 ### Features
