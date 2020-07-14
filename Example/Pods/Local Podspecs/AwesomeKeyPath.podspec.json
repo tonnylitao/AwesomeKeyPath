@@ -1,0 +1,30 @@
+{
+  "name": "AwesomeKeyPath",
+  "version": "0.0.1",
+  "summary": "A short description of AwesomeKeyPath.",
+  "swift_versions": "4",
+  "description": "Use Swift Keypath in DataBinding, Predication, Testing etc.",
+  "homepage": "https://github.com/tonnylitao/AwesomeKeyPath",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "tonnylitao": "tonny.litao@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/tonnylitao/AwesomeKeyPath.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "AwesomeKeyPath/Classes/KPDataBinding/**/*",
+  "subspecs": [
+    {
+      "name": "Predication",
+      "source_files": "AwesomeKeyPath/Classes/KPPredication/**/*"
+    }
+  ],
+  "swift_version": "4"
+}

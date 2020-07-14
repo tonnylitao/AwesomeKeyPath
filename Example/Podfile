@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AwesomeKeyPath_Example' do
+  pod 'AwesomeKeyPath', :path => '../'
+
+  target 'AwesomeKeyPath_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

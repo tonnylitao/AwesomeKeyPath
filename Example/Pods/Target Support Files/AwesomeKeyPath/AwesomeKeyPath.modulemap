@@ -1,0 +1,6 @@
+framework module AwesomeKeyPath {
+  umbrella header "AwesomeKeyPath-umbrella.h"
+
+  export *
+  module * { export * }
+}
