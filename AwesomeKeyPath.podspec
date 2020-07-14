@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'AwesomeKeyPath'
   s.version          = '0.0.1'
-  s.summary          = 'A short description of AwesomeKeyPath.'
+  s.summary          = 'Use Swift Keypath in DataBinding, Predication, Testing etc.'
   s.swift_versions   = '4'
 
 # This description is used to generate tags and improve search results.
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Use Swift Keypath in DataBinding, Predication, Testing etc.
+  Swift KeyPath is awesome, this library is a collection of how to apply KeyPath in development
                        DESC
 
   s.homepage         = 'https://github.com/tonnylitao/AwesomeKeyPath'
