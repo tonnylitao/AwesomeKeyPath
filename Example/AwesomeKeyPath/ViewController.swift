@@ -70,6 +70,20 @@ class ViewController: UIViewController {
             
             ageSteper        <~> (\.age,  { $0.value = Double($1) }, { view, _ in Int(view.value) }),
         ])
+        
+        userViewModel.require(
+            \.name.isSome,
+            \.name!.isEmpty.not
+        ) { [weak self] in
+            self?.nameField.becomeFirstResponder()
+        }
+        
+        userViewModel.require(
+            \.email.isSome,
+            \.email!.isEmpty.not
+        ) { [weak self] in
+            self?.emailField.becomeFirstResponder()
+        }
     }
     
     @IBAction func updateProperties(_ sender: Any) {
@@ -83,12 +97,34 @@ class ViewController: UIViewController {
     }
     
     @IBAction func submit(_ sender: Any) {
+        assertBinding()
+        
+        guard let result = userViewModel.validate() else {
+            return
+        }
+        
+        print(result)
+        
+        if !loadingViewModel.model.isLoading {
+
+            loadingViewModel.update(\.isLoading, with: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.loadingViewModel.update(\.isLoading, with: false)
+            }
+        }
+    }
+    
+}
+
+extension ViewController {
+
+    func assertBinding() {
         let data = userViewModel.model
         
         assert(groupNameLbl.text == data?.groupName)
         
         //set UITextField text nil, but still get ""
-//        assert(nameField.text == data?.name || (nameField.text == "" && data?.name == nil))
+        assert(nameField.text == data?.name || (nameField.text == "" && data?.name == nil))
         assert(emailField.text == data?.email || (emailField.text == "" && data?.email == nil))
         
         assert(activitySlider.value == data?.activity)
@@ -98,15 +134,5 @@ class ViewController: UIViewController {
         assert(readingBtn.isSelected == data?.reading)
         
         assert(Int(ageSteper.value) == data?.age)
-//        assert(Int(ageLbl.text ?? "") == data?.age)
-        
-        
-        if !loadingViewModel.model.isLoading {
-
-            loadingViewModel.update(\.isLoading, with: true)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.loadingViewModel.update(\.isLoading, with: false)
-            }
-        }
     }
 }

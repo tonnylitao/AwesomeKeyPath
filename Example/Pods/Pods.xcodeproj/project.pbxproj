@@ -14,12 +14,14 @@
 		34E33E5B55F56ED97094CCCC363A45F5 /* AwesomeKeyPath-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6929A73410936A95A8926E3AB38C701C /* AwesomeKeyPath-dummy.m */; };
 		3AA448DD39A4095D7841F4D701A27E0F /* KPOneWayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89BC29CCFFF2423789348D7F5035444 /* KPOneWayView.swift */; };
 		40C17409E146074965C6D6F568556442 /* KPTwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA038A9B7165D70788601848454B81F3 /* KPTwoWayBinding.swift */; };
-		471FCDFAD7BB8D9673B3F8379EB3E9DC /* KPPre.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFC29E2C3BBD92FBC00AD133808E44 /* KPPre.swift */; };
+		471FCDFAD7BB8D9673B3F8379EB3E9DC /* KPValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFC29E2C3BBD92FBC00AD133808E44 /* KPValidationViewModel.swift */; };
 		4799D37A0997350E96C6F7C473A8379E /* KPOneWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834D28D895BF9B14FE6CC7FFA4A015E /* KPOneWayBinding.swift */; };
 		652B5B08AF5241193C708B635C66121C /* Pods-AwesomeKeyPath_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4B49608BF4560D822B5885F597FB1 /* Pods-AwesomeKeyPath_Tests-dummy.m */; };
 		8859176B9B4A86F18360749E3EAB976B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		989AD3F639AC9D4916F0470EFD4DFA2A /* Pods-AwesomeKeyPath_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0388AE7415A991EC633BA82C9675A3C /* Pods-AwesomeKeyPath_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B30FED662C846A40E882CE0077251B9F /* KPDataBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528D8708B3F526B8B96C1B0B87EDBDD /* KPDataBindingViewModel.swift */; };
+		B55219AD24C1AB9300A3C1B6 /* KPValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55219AC24C1AB9300A3C1B6 /* KPValidator.swift */; };
+		B55219AF24C1ABF600A3C1B6 /* KPValidationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55219AE24C1ABF600A3C1B6 /* KPValidationEx.swift */; };
 		CCC94A0E9653030045365D8D7C43BE7F /* KPLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77761765D1C95E1CDEF0112FF7052931 /* KPLog.swift */; };
 		D68C7CFC687C30B7833A4829CCA5FFE1 /* Pods-AwesomeKeyPath_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C8ACE556295C034F9E35991A372491F /* Pods-AwesomeKeyPath_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E26898C105BB02AD8E93796D4F85A7EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
@@ -68,13 +70,15 @@
 		A89BC29CCFFF2423789348D7F5035444 /* KPOneWayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPOneWayView.swift; sourceTree = "<group>"; };
 		AD4F951BE69DECE705E347571D4D89F2 /* Pods-AwesomeKeyPath_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeKeyPath_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AF01FCE3DED61A0F16F5896456B220D5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B55219AC24C1AB9300A3C1B6 /* KPValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KPValidator.swift; path = AwesomeKeyPath/Classes/KPPredication/KPValidator.swift; sourceTree = "<group>"; };
+		B55219AE24C1ABF600A3C1B6 /* KPValidationEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPValidationEx.swift; sourceTree = "<group>"; };
 		B552D223D63AB9E0C2C02465E1F7CBE0 /* Pods-AwesomeKeyPath_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AwesomeKeyPath_Tests.modulemap"; sourceTree = "<group>"; };
 		BA92776607360876E0BBAC9789F04902 /* Pods-AwesomeKeyPath_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeKeyPath_Tests-Info.plist"; sourceTree = "<group>"; };
 		C3B7C91195A9C5F021CEE10354CFFCB7 /* AwesomeKeyPath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AwesomeKeyPath.release.xcconfig; sourceTree = "<group>"; };
 		CFD8CB97653B3CFBB128191BBDB36200 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D0388AE7415A991EC633BA82C9675A3C /* Pods-AwesomeKeyPath_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeKeyPath_Example-umbrella.h"; sourceTree = "<group>"; };
 		D4B1933B25FBAC48D9070756CCC43515 /* Pods-AwesomeKeyPath_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeKeyPath_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		DCAFC29E2C3BBD92FBC00AD133808E44 /* KPPre.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPPre.swift; path = AwesomeKeyPath/Classes/KPPredication/KPPre.swift; sourceTree = "<group>"; };
+		DCAFC29E2C3BBD92FBC00AD133808E44 /* KPValidationViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPValidationViewModel.swift; path = AwesomeKeyPath/Classes/KPPredication/KPValidationViewModel.swift; sourceTree = "<group>"; };
 		E7086EB8E45C1781DAE86F0BCEF00B1D /* Pods-AwesomeKeyPath_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AwesomeKeyPath_Example.modulemap"; sourceTree = "<group>"; };
 		E9F1F412163D07356F698161ED630551 /* Pods-AwesomeKeyPath_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeKeyPath_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		EA038A9B7165D70788601848454B81F3 /* KPTwoWayBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPTwoWayBinding.swift; sourceTree = "<group>"; };
@@ -152,7 +156,9 @@
 		3ED7488DF1C6CAA861B9CF4F502B58A4 /* Predication */ = {
 			isa = PBXGroup;
 			children = (
-				DCAFC29E2C3BBD92FBC00AD133808E44 /* KPPre.swift */,
+				DCAFC29E2C3BBD92FBC00AD133808E44 /* KPValidationViewModel.swift */,
+				B55219AC24C1AB9300A3C1B6 /* KPValidator.swift */,
+				B55219AE24C1ABF600A3C1B6 /* KPValidationEx.swift */,
 			);
 			name = Predication;
 			sourceTree = "<group>";
@@ -420,7 +426,9 @@
 				CCC94A0E9653030045365D8D7C43BE7F /* KPLog.swift in Sources */,
 				4799D37A0997350E96C6F7C473A8379E /* KPOneWayBinding.swift in Sources */,
 				3AA448DD39A4095D7841F4D701A27E0F /* KPOneWayView.swift in Sources */,
-				471FCDFAD7BB8D9673B3F8379EB3E9DC /* KPPre.swift in Sources */,
+				471FCDFAD7BB8D9673B3F8379EB3E9DC /* KPValidationViewModel.swift in Sources */,
+				B55219AD24C1AB9300A3C1B6 /* KPValidator.swift in Sources */,
+				B55219AF24C1ABF600A3C1B6 /* KPValidationEx.swift in Sources */,
 				40C17409E146074965C6D6F568556442 /* KPTwoWayBinding.swift in Sources */,
 				F668F1D25D13AA8746932A255CB0AF78 /* KPTwoWayView.swift in Sources */,
 			);

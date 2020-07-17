@@ -19,7 +19,10 @@ public class KPDataBindingViewModel<Model> {
     
     public init() {}
     
-    public func bind(_ model: Model, _ mapping: [KPBinding<Model>]) {
+    lazy private var _validatorViewModel = KPValidationViewModel<Model>()
+    
+    @discardableResult
+    public func bind(_ model: Model, _ mapping: [KPBinding<Model>]) -> Self {
         self.model = model
         
         _bindings = mapping
@@ -35,10 +38,13 @@ public class KPDataBindingViewModel<Model> {
                 _twoWaybindings[binding.id] = array
             }
         }
+        
+        return self
     }
     
-    public func bind(_ binding: KPBinding<Model>) {
-        assert(self.model != nil, "Please bind model first bind(_:_:)")
+    @discardableResult
+    public func bind(_ binding: KPBinding<Model>) -> Self {
+        Swift.assert(self.model != nil, "Please bind model first bind(_:_:)")
         
         _bindings.append(binding)
         binding.modelUpdateView(model)
@@ -50,6 +56,8 @@ public class KPDataBindingViewModel<Model> {
             array.append(twoWayBinding)
             _twoWaybindings[binding.id] = array
         }
+        
+        return self
     }
     
     public func unbind<Value>(_ keyPath: KeyPath<Model, Value>) {
@@ -100,5 +108,18 @@ extension KPDataBindingViewModel {
         self.model = model
         
         _bindings.forEach { $0.modelUpdateView(model) }
+    }
+}
+
+extension KPDataBindingViewModel {
+    
+    @discardableResult
+    public func require(_ validators: KeyPath<Model, Bool>..., closure: @escaping () -> ()) -> Self {
+        _validatorViewModel.add(KPValidator(validators, closure: closure))
+        return self
+    }
+    
+    public func validate() -> Model? {
+        _validatorViewModel.validate(with: model)
     }
 }
