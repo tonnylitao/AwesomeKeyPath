@@ -83,7 +83,7 @@ public class KPDataBindingViewModel<Model> {
             .filter { $0.id != control.id && keyPaths.contains($0.modelKeyPath) }
             .forEach { $0.modelUpdateView(model) }
         
-        print(model)
+        print(model as Any)
     }
 }
 

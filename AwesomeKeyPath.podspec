@@ -8,9 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeKeyPath'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'Use Swift Keypath in DataBinding, Predication, Testing etc.'
-  s.swift_versions   = '4'
+  s.swift_versions   = '5'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
