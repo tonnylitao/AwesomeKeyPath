@@ -43,7 +43,7 @@ public class KPOneWayBinding<Model>: KPBinding<Model> {
     }
     
     public init<V: UIView, Value>(_ view: V,
-                                     _ mKeyPath: WritableKeyPath<Model, Value>,
+                                     _ mKeyPath: KeyPath<Model, Value>,
                                      _ adapter: @escaping (V, Value) -> ()) {
         super.init()
 
@@ -55,8 +55,11 @@ public class KPOneWayBinding<Model>: KPBinding<Model> {
                 assert(false, "Type is \(type(of: $1)), but expected \(Value.self)")
                 return
             }
+            guard let writableKeyPath = mKeyPath as? WritableKeyPath<Model, Value> else {
+                return
+            }
 
-            $0[keyPath: mKeyPath] = value
+            $0[keyPath: writableKeyPath] = value
 
             guard let view = view else { return }
             adapter(view, value)
@@ -87,7 +90,7 @@ public extension KPSelfOneWayView {
 
 infix operator <~
 
-public typealias KPTuple<V: UIView, Model, Value> = (WritableKeyPath<Model, Value>, (V, Value) -> ())
+public typealias KPTuple<V: UIView, Model, Value> = (KeyPath<Model, Value>, (V, Value) -> ())
 
 public func <~ <V: UIView, Model, Value>(view: V, tuple: KPTuple<V, Model, Value>) -> KPBinding<Model> {
     KPOneWayBinding(view, tuple.0, tuple.1)
