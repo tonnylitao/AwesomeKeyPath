@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 
+
 public class KPDataBindingViewModel<Model> {
     
     public private(set) var model: Model!
@@ -19,7 +20,6 @@ public class KPDataBindingViewModel<Model> {
     
     public init() {}
     
-    lazy private var _validatorViewModel = KPValidationViewModel<Model>()
     
     @discardableResult
     public func bind(_ model: Model, _ mapping: [KPBinding<Model>]) -> Self {
@@ -108,18 +108,5 @@ extension KPDataBindingViewModel {
         self.model = model
         
         _bindings.forEach { $0.modelUpdateView(model) }
-    }
-}
-
-extension KPDataBindingViewModel {
-    
-    @discardableResult
-    public func require(_ validators: KeyPath<Model, Bool>..., closure: @escaping () -> ()) -> Self {
-        _validatorViewModel.add(KPValidator(validators, closure: closure))
-        return self
-    }
-    
-    public func validate() -> Model? {
-        _validatorViewModel.validate(with: model)
     }
 }

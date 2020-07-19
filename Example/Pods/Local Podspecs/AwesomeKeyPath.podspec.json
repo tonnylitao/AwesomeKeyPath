@@ -1,6 +1,6 @@
 {
   "name": "AwesomeKeyPath",
-  "version": "0.0.2",
+  "version": "0.1.2",
   "summary": "Use Swift Keypath in DataBinding, Predication, Testing etc.",
   "swift_versions": "5",
   "description": "Swift KeyPath is awesome, this library is a collection of how to apply KeyPath in development",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/tonnylitao/AwesomeKeyPath.git",
-    "tag": "0.0.2"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "8.0"
@@ -22,8 +22,8 @@
   "source_files": "AwesomeKeyPath/Classes/KPDataBinding/**/*",
   "subspecs": [
     {
-      "name": "Predication",
-      "source_files": "AwesomeKeyPath/Classes/KPPredication/**/*"
+      "name": "Validation",
+      "source_files": "AwesomeKeyPath/Classes/KPValidation/*"
     }
   ],
   "swift_version": "5"

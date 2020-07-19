@@ -13,6 +13,8 @@ struct IndicatorStatus {
     var isLoading = false
 }
 
+extension User: KPValidation {}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var groupNameLbl:     UILabel!
@@ -70,20 +72,6 @@ class ViewController: UIViewController {
             
             ageSteper        <~> (\.age,  { $0.value = Double($1) }, { view, _ in Int(view.value) }),
         ])
-        
-        userViewModel.require(
-            \.name.isSome,
-            \.name!.isEmpty.not
-        ) { [weak self] in
-            self?.nameField.becomeFirstResponder()
-        }
-        
-        userViewModel.require(
-            \.email.isSome,
-            \.email!.isEmpty.not
-        ) { [weak self] in
-            self?.emailField.becomeFirstResponder()
-        }
     }
     
     @IBAction func updateProperties(_ sender: Any) {
@@ -99,11 +87,18 @@ class ViewController: UIViewController {
     @IBAction func submit(_ sender: Any) {
         assertBinding()
         
-        guard let result = userViewModel.validate() else {
+        let model = userViewModel.model!
+        print(model)
+        
+        guard model.validate(\.name.isSome, \.name!.isNotEmpty) else {
+            nameField.becomeFirstResponder()
             return
         }
         
-        print(result)
+        guard model.validate(\.email.isSome, \.email!.isEmail, { $0.email!.count > 5 }) else {
+            emailField.becomeFirstResponder()
+            return
+        }
         
         if !loadingViewModel.model.isLoading {
 
