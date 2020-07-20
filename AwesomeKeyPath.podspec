@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeKeyPath'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'Use Swift Keypath in DataBinding, Predication, Testing etc.'
   s.swift_versions   = '5'
 
