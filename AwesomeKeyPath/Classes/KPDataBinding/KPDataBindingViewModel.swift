@@ -23,6 +23,10 @@ public class KPDataBindingViewModel<Model> {
     
     @discardableResult
     public func bind(_ model: Model, _ mapping: [KPBinding<Model>]) -> Self {
+        if !Thread.current.isMainThread {
+            fatalError("KPDataBindingViewModel.bind(_,_) only run on main thread")
+        }
+        
         self.model = model
         
         _bindings = mapping
@@ -44,6 +48,9 @@ public class KPDataBindingViewModel<Model> {
     
     @discardableResult
     public func bind(_ binding: KPBinding<Model>) -> Self {
+        if !Thread.current.isMainThread {
+            fatalError("KPDataBindingViewModel.bind(_) only run on main thread")
+        }
         Swift.assert(self.model != nil, "Please bind model first bind(_:_:)")
         
         _bindings.append(binding)
@@ -58,13 +65,6 @@ public class KPDataBindingViewModel<Model> {
         }
         
         return self
-    }
-    
-    public func unbind<Value>(_ keyPath: KeyPath<Model, Value>) {
-        let keyPaths = _bindings.filter { $0.modelKeyPath == keyPath }
-        
-        _bindings.removeAll { $0.modelKeyPath == keyPath }
-        keyPaths.forEach { _twoWaybindings.removeValue(forKey: $0.id) }
     }
     
     @objc private func viewChanged(control: UIControl) {
@@ -98,15 +98,36 @@ public class KPDataBindingViewModel<Model> {
 
 extension KPDataBindingViewModel {
     
-    public func update<Value>(_ keyPath: WritableKeyPath<Model, Value>, with value: Value) {
+    @discardableResult
+    public func update<Value>(_ keyPath: WritableKeyPath<Model, Value>, with value: Value) -> Bool {
+        if !Thread.current.isMainThread {
+            fatalError("KPDataBindingViewModel.update(_, with:) only run on main thread")
+        }
         
         let bindings = _bindings.filter({ $0.modelKeyPath == keyPath })
         bindings.forEach { $0.updateModelAndView(&model, value) }
+        
+        return bindings.count > 0
     }
     
     public func updateWith(_ model: Model) {
+        if !Thread.current.isMainThread {
+            fatalError("KPDataBindingViewModel.updateWith(_) only run on main thread")
+        }
+        
         self.model = model
         
         _bindings.forEach { $0.modelUpdateView(model) }
+    }
+}
+
+extension KPDataBindingViewModel {
+    
+    public func unbind<Value>(_ keyPath: KeyPath<Model, Value>) {
+        
+        let keyPaths = _bindings.filter { $0.modelKeyPath == keyPath }
+        
+        _bindings.removeAll { $0.modelKeyPath == keyPath }
+        keyPaths.forEach { _twoWaybindings.removeValue(forKey: $0.id) }
     }
 }

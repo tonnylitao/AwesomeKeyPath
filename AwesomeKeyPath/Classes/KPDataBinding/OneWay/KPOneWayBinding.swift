@@ -26,11 +26,12 @@ public class KPOneWayBinding<Model>: KPBinding<Model> {
             }
             
             $0[keyPath: mKeyPath] = value
+            print("<- : \(mKeyPath) ==", value)
             
             guard let view = view else { return }
             view[keyPath: vKeyPath] = value
             
-            print("<- : view#\(view.id) <-", $0)
+            print("<- : view#\(view.id) <-", value)
         }
 
         modelUpdateView = { [weak view] in

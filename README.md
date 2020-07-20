@@ -7,19 +7,19 @@
 
 ```swift
 viewModel.bind(User(), [
-    uiLabel       <-   \User.title,
-    uiTextField   <->  \User.email,
+    uiLabel       <-   \User.title,  //one way data binding
+    uiTextField   <->  \User.email,  //two way data binding
 ])
 ```
 
-* KeyPath in validation
+* KeyPath in Validation
 
 ```swift
 guard user.validate(
     \.email.isEmpty.not, 
     \.email.isEmail
 ) else {
-	return
+    return
 }
 ```
 

@@ -25,15 +25,18 @@ extension UILabel: KPSelfOneWayView {
     public static let keyPath = \UILabel.text
 }
 
+
 extension UIImageView: KPSelfOneWayView {
 
     public static let keyPath = \UIImageView.image
 }
 
+
 extension UITextField: KPSelfOneWayView {
 
     public static let keyPath = \UITextField.text
 }
+
 
 extension UISwitch: KPSelfOneWayView {
     
