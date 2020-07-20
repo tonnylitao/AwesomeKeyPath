@@ -37,7 +37,7 @@ class OneWayTests: XCTestCase {
         XCTAssertNil(lbl.text)
         
         XCTAssertNil(viewModel.model.email)
-        XCTAssert(field.text == "")
+        XCTAssertEqual(field.text, "")
     }
     
     func testInitialWithData() throws {
@@ -50,16 +50,16 @@ class OneWayTests: XCTestCase {
             field   <- \.email
         ])
         
-        XCTAssert(lbl.text == viewModel.model.name)
-        XCTAssert(field.text == viewModel.model.email)
+        XCTAssertEqual(lbl.text, viewModel.model.name)
+        XCTAssertEqual(field.text, viewModel.model.email)
     }
     
     func testUpdate() throws {
         let text = String.random
         
         viewModel.update(\.name, with: text)
-        XCTAssert(viewModel.model.name == text)
-        XCTAssert(lbl.text == text)
+        XCTAssertEqual(viewModel.model.name, text)
+        XCTAssertEqual(lbl.text, text)
         
         viewModel.update(\.name, with: nil)
         XCTAssertNil(viewModel.model.name)
@@ -67,12 +67,12 @@ class OneWayTests: XCTestCase {
         
         //
         viewModel.update(\.email, with: text)
-        XCTAssert(viewModel.model.email == text)
-        XCTAssert(field.text == text)
+        XCTAssertEqual(viewModel.model.email, text)
+        XCTAssertEqual(field.text, text)
         
         viewModel.update(\.email, with: nil)
         XCTAssertNil(viewModel.model.email)
-        XCTAssert(field.text == "")
+        XCTAssertEqual(field.text, "")
     }
     
     func testUnbind() throws {
@@ -93,20 +93,20 @@ class OneWayTests: XCTestCase {
             view3    <- \.name
         ])
         
-        XCTAssert(view1.text == viewModel.model.name)
-        XCTAssert(view2.text == viewModel.model.name)
-        XCTAssert(view3.text == viewModel.model.name)
+        XCTAssertEqual(view1.text, viewModel.model.name)
+        XCTAssertEqual(view2.text, viewModel.model.name)
+        XCTAssertEqual(view3.text, viewModel.model.name)
         
         let text = String.random
         viewModel.update(\.name, with: text)
-        XCTAssert(view1.text == text)
-        XCTAssert(view2.text == text)
-        XCTAssert(view3.text == text)
+        XCTAssertEqual(view1.text, text)
+        XCTAssertEqual(view2.text, text)
+        XCTAssertEqual(view3.text, text)
         
         viewModel.update(\.name, with: nil)
         XCTAssertNil(view1.text)
         XCTAssertNil(view2.text)
-        XCTAssert(view3.text == "")
+        XCTAssertEqual(view3.text, "")
     }
     
     func testManyFieldToOneView() throws {
@@ -120,16 +120,16 @@ class OneWayTests: XCTestCase {
             lbl    <- \.groupName
         ])
         
-        XCTAssert(lbl.text == viewModel.model.groupName)
+        XCTAssertEqual(lbl.text, viewModel.model.groupName)
         
         viewModel.update(\.name, with: String.random)
-        XCTAssert(lbl.text == viewModel.model.name)
+        XCTAssertEqual(lbl.text, viewModel.model.name)
         
         viewModel.update(\.email, with: String.random)
-        XCTAssert(lbl.text == viewModel.model.email)
+        XCTAssertEqual(lbl.text, viewModel.model.email)
         
         viewModel.update(\.groupName, with: String.random)
-        XCTAssert(lbl.text == viewModel.model.groupName)
+        XCTAssertEqual(lbl.text, viewModel.model.groupName)
     }
     
     func testOneFormat() throws {
@@ -143,13 +143,13 @@ class OneWayTests: XCTestCase {
             lbl    <~ (\.name, { $0.text = ($1 ?? "") + text }),
         ])
         
-        XCTAssert(lbl.text == (viewModel.model.name ?? "") + text)
+        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text)
         
         viewModel.update(\.name, with: String.random)
-        XCTAssert(lbl.text == (viewModel.model.name ?? "") + text)
+        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text)
         
         viewModel.update(\.name, with: nil)
-        XCTAssert(lbl.text == text)
+        XCTAssertEqual(lbl.text, text)
     }
     
     func testMultileFormat() throws {
@@ -166,16 +166,16 @@ class OneWayTests: XCTestCase {
             field  <~ (\.name, { $0.text = ($1 ?? "") + text2 }),
         ])
         
-        XCTAssert(lbl.text == (viewModel.model.name ?? "") + text1)
-        XCTAssert(field.text == (viewModel.model.name ?? "") + text2)
+        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text1)
+        XCTAssertEqual(field.text, (viewModel.model.name ?? "") + text2)
         
         viewModel.update(\.name, with: String.random)
-        XCTAssert(lbl.text == (viewModel.model.name ?? "") + text1)
-        XCTAssert(field.text == (viewModel.model.name ?? "") + text2)
+        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text1)
+        XCTAssertEqual(field.text, (viewModel.model.name ?? "") + text2)
         
         viewModel.update(\.name, with: nil)
-        XCTAssert(lbl.text == text1)
-        XCTAssert(field.text == text2)
+        XCTAssertEqual(lbl.text, text1)
+        XCTAssertEqual(field.text, text2)
     }
     
     func testOtherFormat() throws {
@@ -187,13 +187,13 @@ class OneWayTests: XCTestCase {
             KPOneWayBinding(lbl, \User.name, { $0.layer.cornerRadius = CGFloat(Float($1 ?? "0") ?? 0) })
         ])
         
-        XCTAssert(lbl.layer.cornerRadius == 0)
+        XCTAssertEqual(lbl.layer.cornerRadius, 0)
         
         let random = CGFloat.random(in: 0...1000)
         viewModel.update(\.name, with: "\(random)")
-        XCTAssert(lbl.layer.cornerRadius == CGFloat(Float("\(random)") ?? 0))
+        XCTAssertEqual(lbl.layer.cornerRadius, CGFloat(Float("\(random)") ?? 0))
         
         viewModel.update(\.name, with: nil)
-        XCTAssert(lbl.layer.cornerRadius == 0)
+        XCTAssertEqual(lbl.layer.cornerRadius, 0)
     }
 }
