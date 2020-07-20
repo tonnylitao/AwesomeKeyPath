@@ -95,7 +95,7 @@ class ViewController: UIViewController {
             return
         }
         
-        guard model.validate(\.email.isSome, \.email!.isEmail, { $0.email!.count > 5 }) else {
+        guard model.validate(\.email.isSome, \.email!.isEmail, { (5...20).contains($0.email!.count) }) else {
             emailField.becomeFirstResponder()
             return
         }
