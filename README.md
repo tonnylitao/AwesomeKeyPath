@@ -1,6 +1,27 @@
 # AwesomeKeyPath
-A data binding library with Swift KeyPath
 
+
+### Why KeyPath is awesome?
+
+* KeyPath in Data Binding
+
+```swift
+viewModel.bind(User(), [
+    uiLabel       <-   \User.title,
+    uiTextField   <->  \User.email,
+])
+```
+
+* KeyPath in validation
+
+```swift
+guard user.validate(
+    \.email.isEmpty.not, 
+    \.email.isEmail
+) else {
+	return
+}
+```
 
 ### Installation
 
@@ -16,6 +37,7 @@ pod 'AwesomeKeyPath'
 * Data format and casting
 * Infix operators
 * unbind
+* validation
 
 
 ### One-way data binding
@@ -189,7 +211,7 @@ class ViewController: UIViewController {
 }
 ```
 
-### How does DataBinding work with KeyPath?
+### How KeyPath works in DataBinding?
 
 ```swift
 model[keyPath: \User.name] = "Tonny"       //update model
