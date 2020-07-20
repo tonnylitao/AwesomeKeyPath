@@ -60,13 +60,6 @@ public class KPDataBindingViewModel<Model> {
         return self
     }
     
-    public func unbind<Value>(_ keyPath: KeyPath<Model, Value>) {
-        let keyPaths = _bindings.filter { $0.modelKeyPath == keyPath }
-        
-        _bindings.removeAll { $0.modelKeyPath == keyPath }
-        keyPaths.forEach { _twoWaybindings.removeValue(forKey: $0.id) }
-    }
-    
     @objc private func viewChanged(control: UIControl) {
         
         (control as? KPTwoWayEventReceiver)?.handleEvent()
@@ -98,15 +91,29 @@ public class KPDataBindingViewModel<Model> {
 
 extension KPDataBindingViewModel {
     
-    public func update<Value>(_ keyPath: WritableKeyPath<Model, Value>, with value: Value) {
+    @discardableResult
+    public func update<Value>(_ keyPath: WritableKeyPath<Model, Value>, with value: Value) -> Bool {
         
         let bindings = _bindings.filter({ $0.modelKeyPath == keyPath })
         bindings.forEach { $0.updateModelAndView(&model, value) }
+        
+        return bindings.count > 0
     }
     
     public func updateWith(_ model: Model) {
         self.model = model
         
         _bindings.forEach { $0.modelUpdateView(model) }
+    }
+}
+
+extension KPDataBindingViewModel {
+    
+    public func unbind<Value>(_ keyPath: KeyPath<Model, Value>) {
+        
+        let keyPaths = _bindings.filter { $0.modelKeyPath == keyPath }
+        
+        _bindings.removeAll { $0.modelKeyPath == keyPath }
+        keyPaths.forEach { _twoWaybindings.removeValue(forKey: $0.id) }
     }
 }
