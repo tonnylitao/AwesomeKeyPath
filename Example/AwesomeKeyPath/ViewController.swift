@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var ageSteper:        UIStepper!
     
     @IBOutlet weak var activitySlider:   UISlider!
-    
     @IBOutlet weak var likeKiwiSwitcher: UISwitch!
     
     @IBOutlet weak var travelBtn:        UIButton!
