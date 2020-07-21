@@ -71,21 +71,21 @@ class ViewController: UIViewController {
         ])
     }
     
-	@IBAction func submit(_ sender: Any) {
-		let data = userViewModel.model
+    @IBAction func submit(_ sender: Any) {
+        let data = userViewModel.model
     
-		guard data.validate(\.name.isSome, \.name!.isNotEmpty) else {
-			nameField.becomeFirstResponder()
-			return
-	   }
+        guard data.validate(\.name.isSome, \.name!.isNotEmpty) else {
+            nameField.becomeFirstResponder()
+            return
+        }
 
-		guard data.validate(\.email.isSome, \.email!.isEmail, { $0.email!.count > 5 }) else {
-			emailField.becomeFirstResponder()
-        	return
-		}
+        guard data.validate(\.email.isSome, \.email!.isEmail, { $0.email!.count > 5 }) else {
+            emailField.becomeFirstResponder()
+            return
+        }
 		
-		...
-	}
+        ...
+    }
 }
 ```
 
