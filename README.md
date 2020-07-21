@@ -36,15 +36,15 @@ import AwesomeKeyPath
 class ViewController: UIViewController {
     
     @IBOutlet weak var groupNameLbl:     UILabel!
+    
     @IBOutlet weak var nameField:        UITextField!
     @IBOutlet weak var emailField:       UITextField!
+    
     @IBOutlet weak var ageLbl:           UILabel!
     @IBOutlet weak var ageSteper:        UIStepper!
     @IBOutlet weak var activitySlider:   UISlider!
     @IBOutlet weak var likeKiwiSwitcher: UISwitch!
     @IBOutlet weak var travelBtn:        UIButton!
-    @IBOutlet weak var hikingBtn:        UIButton!
-    @IBOutlet weak var readingBtn:       UIButton!
     
     lazy var userViewModel = KPDataBindingViewModel<User>()
     
