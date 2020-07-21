@@ -6,7 +6,7 @@
 ```swift
 let user = User(title: "Mr.", email: "")
 
-viewModel.bind(, [
+viewModel.bind(user, [
     uiLabel       <-   \.title,  //one way data binding
     uiTextField   <->  \.email,  //two way data binding
 ])
