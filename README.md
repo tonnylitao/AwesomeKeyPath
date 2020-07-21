@@ -20,7 +20,7 @@ guard user.validate(\.email.isEmpty.not, \.email.isEmail) else {
 }
 ```
 
-## AwesomeKeyPath in action
+## AwesomeKeyPath in Action [Read More](document.md)
 
 ### Installation
 
@@ -86,8 +86,6 @@ class ViewController: UIViewController {
     }
 }
 ```
-
-[Read More](document.md)
 
 ## License
 
