@@ -1,5 +1,5 @@
 //
-//  OneWayTests.swift
+//  OneWayBindingTests.swift
 //  AwesomeKeyPath_Tests
 //
 //  Created by Tonny on 20/07/20.
@@ -10,29 +10,27 @@
 import XCTest
 import AwesomeKeyPath
 
-class OneWayTests: XCTestCase {
-    var lbl: UILabel!
-    var field: UITextField!
+class OneWayBindingTests: XCTestCase {
+    
     var viewModel: KPDataBindingViewModel<User>!
-    
-    
+
     override func setUpWithError() throws {
-        lbl = UILabel()
-        field = UITextField()
-        
         viewModel = KPDataBindingViewModel<User>()
-        
-        viewModel.bind(User(), [
-            lbl     <- \.name,
-            field   <- \.email
-        ])
     }
 
-    override func tearDownWithError() throws {
-        viewModel.unbind(\.name)
-    }
+    override func tearDownWithError() throws {}
 
     func testInitial() throws {
+        let lbl = UILabel()
+        let field = UITextField()
+        let btn = UIButton()
+        
+        viewModel.bind(User(), [
+            KPOneWayBinding(lbl, \.text, \.name),
+            KPOneWayBinding(field, \.text, \.email),
+            KPOneWayBinding(btn, \.isSelected, \.likeKiwi)
+        ])
+        
         XCTAssertNotNil(viewModel.model)
         
         XCTAssertNil(viewModel.model.name)
@@ -40,16 +38,18 @@ class OneWayTests: XCTestCase {
         
         XCTAssertNil(viewModel.model.email)
         XCTAssertEqual(field.text, UITextField().text)
+        
+        XCTAssertFalse(viewModel.model.likeKiwi)
+        XCTAssertFalse(btn.isSelected)
     }
     
     func testInitialWithData() throws {
         let lbl = UILabel()
         let field = UITextField()
-        let viewModel = KPDataBindingViewModel<User>()
         
         viewModel.bind(User.random, [
-            lbl     <- \.name,
-            field   <- \.email
+            KPOneWayBinding(lbl, \.text, \.name),
+            KPOneWayBinding(field, \.text, \.email)
         ])
         
         XCTAssertEqual(lbl.text, viewModel.model.name)
@@ -57,6 +57,14 @@ class OneWayTests: XCTestCase {
     }
     
     func testUpdate() throws {
+        let lbl = UILabel()
+        let field = UITextField()
+        
+        viewModel.bind(User(), [
+            KPOneWayBinding(lbl, \.text, \.name),
+            KPOneWayBinding(field, \.text, \.email)
+        ])
+        
         let text = String.random
         
         viewModel.update(\.name, with: text)
@@ -78,6 +86,12 @@ class OneWayTests: XCTestCase {
     }
     
     func testUnbind() throws {
+        let lbl = UILabel()
+        
+        viewModel.bind(User(), [
+            lbl     <- \.name
+        ])
+        
         viewModel.unbind(\.name)
         XCTAssertFalse(viewModel.update(\.name, with: String.random))
     }
@@ -87,12 +101,10 @@ class OneWayTests: XCTestCase {
         let view2 = UILabel()
         let view3 = UITextField()
         
-        let viewModel = KPDataBindingViewModel<User>()
-        
         viewModel.bind(User.random, [
-            view1    <- \.name,
-            view2    <- \.name,
-            view3    <- \.name
+            KPOneWayBinding(view1, \.text, \.name),
+            KPOneWayBinding(view2, \.text, \.name),
+            KPOneWayBinding(view3, \.text, \.name)
         ])
         
         XCTAssertEqual(view1.text, viewModel.model.name)
@@ -116,12 +128,10 @@ class OneWayTests: XCTestCase {
     func testManyFieldToOneView() throws {
         let lbl = UILabel()
         
-        let viewModel = KPDataBindingViewModel<User>()
-        
         viewModel.bind(User.random, [
-            lbl    <- \.name,
-            lbl    <- \.email,
-            lbl    <- \.groupName
+            KPOneWayBinding(lbl, \.text, \.name),
+            KPOneWayBinding(lbl, \.text, \.email),
+            KPOneWayBinding(lbl, \.text, \.groupName)
         ])
         
         XCTAssertEqual(lbl.text, viewModel.model.groupName)
@@ -141,10 +151,8 @@ class OneWayTests: XCTestCase {
         
         let lbl = UILabel()
         
-        let viewModel = KPDataBindingViewModel<User>()
-        
         viewModel.bind(User.random, [
-            lbl    <~ (\.name, { $0.text = ($1 ?? "") + text }),
+            KPOneWayBinding(lbl, \User.name, { $0.text = ($1 ?? "") + text })
         ])
         
         XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text)
@@ -166,11 +174,9 @@ class OneWayTests: XCTestCase {
         let lbl = UILabel()
         let field = UITextField()
         
-        let viewModel = KPDataBindingViewModel<User>()
-        
         viewModel.bind(User.random, [
-            lbl    <~ (\.name, { $0.text = ($1 ?? "") + text1 }),
-            field  <~ (\.name, { $0.text = ($1 ?? "") + text2 }),
+            KPOneWayBinding(lbl, \User.name, { $0.text = ($1 ?? "") + text1 }),
+            KPOneWayBinding(field, \User.name, { $0.text = ($1 ?? "") + text2 })
         ])
         
         XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text1)
@@ -190,8 +196,6 @@ class OneWayTests: XCTestCase {
     
     func testOtherFormat() throws {
         let lbl = UILabel()
-        
-        let viewModel = KPDataBindingViewModel<User>()
         
         viewModel.bind(User(), [
             KPOneWayBinding(lbl, \User.name, { $0.layer.cornerRadius = CGFloat(Float($1 ?? "0") ?? 0) })
