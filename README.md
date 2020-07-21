@@ -163,7 +163,7 @@ userViewModel.unbind(\User.name)
 
 ## Data binding with KPDataBinding in action
 ```swift
-import AwesomeKeyPath-DataBinding
+import AwesomeKeyPath
 
 class ViewController: UIViewController {
     
