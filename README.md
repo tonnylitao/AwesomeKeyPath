@@ -20,7 +20,7 @@ guard user.validate(\.email.isEmpty.not, \.email.isEmail) else {
 }
 ```
 
-## Data binding with KPDataBinding in action
+## AwesomeKeyPath in action
 
 ### Installation
 
