@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var groupNameLbl:     UILabel!
     
     @IBOutlet weak var nameField:        UITextField!
-    @IBOutlet weak var emailField:       UITextField!
+    @IBOutlet weak var emailField:        UITextField!
     
     @IBOutlet weak var ageLbl:           UILabel!
     @IBOutlet weak var ageSteper:        UIStepper!
@@ -55,13 +55,13 @@ class ViewController: UIViewController {
         
         userViewModel.bind(initialData, [
             groupNameLbl     <-  \User.groupName,
-            travelBtn        <-  \User.name,
-           
+         
             nameField        <-> \User.name,
-            emailField       <-> \User.email,
-            activitySlider   <-> \User.activity,
-            likeKiwiSwitcher <-> \User.likeKiwi,
-            travelBtn        <-> \User.travel,
+	    emailField       <-> \User.email,
+	    
+            activitySlider   <-> \User.aFloat,
+            likeKiwiSwitcher <-> \User.isOn,
+            travelBtn        <-> \User.isSelected,
 
             ageLbl           <~  (\User.age, { $0.text = "Your Age: \($1)" }),
             
