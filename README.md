@@ -56,14 +56,12 @@ class ViewController: UIViewController {
         userViewModel.bind(initialData, [
             groupNameLbl     <-  \User.groupName,
             travelBtn        <-  \User.name,
-            
+           
             nameField        <-> \User.name,
             emailField       <-> \User.email,
             activitySlider   <-> \User.activity,
             likeKiwiSwitcher <-> \User.likeKiwi,
             travelBtn        <-> \User.travel,
-            hikingBtn        <-> \User.hiking,
-            readingBtn       <-> \User.reading,
 
             ageLbl           <~  (\User.age, { $0.text = "Your Age: \($1)" }),
             
