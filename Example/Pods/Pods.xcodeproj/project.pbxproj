@@ -7,22 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03B2540B3F33AA0A2CA96D024CE7208D /* KPBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D1F7B05877AAD1B5F171EA2AD57205 /* KPBinding.swift */; };
 		0AF1832455BB944BBC0E74F57D0FD924 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		0E913C462158D3C4A1A1045B042244E0 /* KPOneWayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2016611716DDEA90EACB05B01DB742 /* KPOneWayView.swift */; };
+		2366CA2BE1EA745A2E2CE3E8D6736ABC /* KPValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4615EC1B613AC656D66FE67EF7B65 /* KPValidation.swift */; };
 		2C0524F1BB466D0ED42E6560856BF89A /* Pods-AwesomeKeyPath_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD672C163AEF95B5FD2C7F01D7CAC1 /* Pods-AwesomeKeyPath_Example-dummy.m */; };
-		32582383350040C6FE9A37A72DE6598C /* AwesomeKeyPath-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FDFD9016DF0EBB09EA3B00FD27949364 /* AwesomeKeyPath-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F10D5D26D7DF7A9B1D66A7D30C1ACFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		652B5B08AF5241193C708B635C66121C /* Pods-AwesomeKeyPath_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4B49608BF4560D822B5885F597FB1 /* Pods-AwesomeKeyPath_Tests-dummy.m */; };
-		73032277014D91B0C580D64C57A0263C /* KPValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB4CB0D6E918CC7373B019DD5EDDC2 /* KPValidation.swift */; };
-		73F6314AB3642CA3B595E6FCD1D75790 /* KPTwoWayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD22C7147C06626D258CC197EE4C13 /* KPTwoWayView.swift */; };
-		7715DEAF0841D7537383BBA483261CBC /* KPTwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E2F9E24591C9E072F4479C09A4336F /* KPTwoWayBinding.swift */; };
-		7A0026B46F3986620039EDD47D0FEA9F /* KPBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F498CFEF948F6A4D3214943407CCBE24 /* KPBinding.swift */; };
-		8740F84EDCD049D0287CD5585311F220 /* KPDataBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D0B25934AB2C10726A9ED62BA9A11 /* KPDataBindingViewModel.swift */; };
-		94E1F271C41DEC0FE7A2F9B8820E6E91 /* KPLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C02E6AAB6B88A9224BA9EB5DCDA1C0 /* KPLog.swift */; };
+		79CAC1A339FDFB981996396BDAF0A563 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		7BCDE77C6A535FA319C41FB532A07A3C /* KPClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F49CEA09E4D6665BB74935E02AC4069 /* KPClosure.swift */; };
+		7C0493EF8DDDB632752B0A8CA34EA077 /* KPOneWayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EAB181B19682DED7F45D7BE31F9CAC /* KPOneWayView.swift */; };
+		852046A5E72C3DB67212EFD2AD7D36DD /* AwesomeKeyPath-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 37DD43EF252A663090042ECE0A564D6C /* AwesomeKeyPath-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8744169071FCE8F04F6204A9E50B698C /* KPTwoWayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6881CA88BF77AEEB662952DF3595C40 /* KPTwoWayView.swift */; };
+		8F824D2F97F32DFD8D2F0B864CB0A822 /* AwesomeKeyPath-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B088DFF991E20B560316CFD6F5A850C8 /* AwesomeKeyPath-dummy.m */; };
 		989AD3F639AC9D4916F0470EFD4DFA2A /* Pods-AwesomeKeyPath_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0388AE7415A991EC633BA82C9675A3C /* Pods-AwesomeKeyPath_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0682B14963729010046FD9ADDD088C7 /* KPOneWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FF502F36ED171182391720CA78627F /* KPOneWayBinding.swift */; };
-		C3BD3357DC1A54C0E11434BBEA807AC0 /* AwesomeKeyPath-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3DC0686FE523D949F333B71D8FFDE /* AwesomeKeyPath-dummy.m */; };
-		CF4193E38A9C7B4EF308508BD286EC62 /* KPValidationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50F36BF5BBF7B2E082C2D127A552BF /* KPValidationEx.swift */; };
+		A7AE2DB798FC6055F8CC7901AB2A5605 /* KPValidationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4573AB08F3A73159B619B9A75604194 /* KPValidationEx.swift */; };
+		AC5C85903FAB1657337327A7E01D08D8 /* KPDataBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD2407D8401F884BA1A0130A60B91B1 /* KPDataBindingViewModel.swift */; };
+		B5B53517B125360D5655DEB79C97AE3D /* KPLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE3AB1D437BADF51D496DC17495373 /* KPLog.swift */; };
+		BF56D22238404C3EC08FEE5F979E0E9A /* KPOneWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882FF24C70559141151B3166A9BE91E8 /* KPOneWayBinding.swift */; };
+		D19E5F6F38CB93911ACBEA031DFD842C /* KPTwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE26AC21FA848127468AAA0D12CC15E /* KPTwoWayBinding.swift */; };
 		D68C7CFC687C30B7833A4829CCA5FFE1 /* Pods-AwesomeKeyPath_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C8ACE556295C034F9E35991A372491F /* Pods-AwesomeKeyPath_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E26898C105BB02AD8E93796D4F85A7EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -45,46 +46,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		018ADC067510209AEC1929F10B1DB8A6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0BDE3AB1D437BADF51D496DC17495373 /* KPLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPLog.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPLog.swift; sourceTree = "<group>"; };
+		115A23998C44BA7EFFEA51DB86E8E35F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		14CD672C163AEF95B5FD2C7F01D7CAC1 /* Pods-AwesomeKeyPath_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AwesomeKeyPath_Example-dummy.m"; sourceTree = "<group>"; };
-		273CBC75459A011D64B70552D9155E52 /* Pods_AwesomeKeyPath_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeKeyPath_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		273CBC75459A011D64B70552D9155E52 /* Pods_AwesomeKeyPath_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AwesomeKeyPath_Tests.framework; path = "Pods-AwesomeKeyPath_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		320FCD2EC0D28B23C7C8D5404D1C76EA /* AwesomeKeyPath.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AwesomeKeyPath.modulemap; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		32AB4CB0D6E918CC7373B019DD5EDDC2 /* KPValidation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPValidation.swift; path = AwesomeKeyPath/Classes/KPValidation/KPValidation.swift; sourceTree = "<group>"; };
 		3659DB9BE377E4EE5403DCD0CB37B2D5 /* Pods-AwesomeKeyPath_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeKeyPath_Example-Info.plist"; sourceTree = "<group>"; };
-		41FF502F36ED171182391720CA78627F /* KPOneWayBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPOneWayBinding.swift; sourceTree = "<group>"; };
-		4A9D0B25934AB2C10726A9ED62BA9A11 /* KPDataBindingViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPDataBindingViewModel.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPDataBindingViewModel.swift; sourceTree = "<group>"; };
-		4CDD22C7147C06626D258CC197EE4C13 /* KPTwoWayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPTwoWayView.swift; sourceTree = "<group>"; };
-		591B8E1B85981BC1D1023EE8F406CDE1 /* AwesomeKeyPath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AwesomeKeyPath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37DD43EF252A663090042ECE0A564D6C /* AwesomeKeyPath-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeKeyPath-umbrella.h"; sourceTree = "<group>"; };
+		5381256D4B5BD4A8E75A06CEE763EB86 /* AwesomeKeyPath-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeKeyPath-prefix.pch"; sourceTree = "<group>"; };
+		5599F61AD2132F2368394885EE8DBC73 /* AwesomeKeyPath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AwesomeKeyPath.debug.xcconfig; sourceTree = "<group>"; };
+		591B8E1B85981BC1D1023EE8F406CDE1 /* AwesomeKeyPath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AwesomeKeyPath.framework; path = AwesomeKeyPath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60BEF9FB7E18EDE99843DC0CDA7AC756 /* AwesomeKeyPath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AwesomeKeyPath.release.xcconfig; sourceTree = "<group>"; };
 		66BEE3B4932A883EBAE07FE8E78916F9 /* Pods-AwesomeKeyPath_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeKeyPath_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		68C02E6AAB6B88A9224BA9EB5DCDA1C0 /* KPLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPLog.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPLog.swift; sourceTree = "<group>"; };
-		6D2016611716DDEA90EACB05B01DB742 /* KPOneWayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPOneWayView.swift; sourceTree = "<group>"; };
 		7C8ACE556295C034F9E35991A372491F /* Pods-AwesomeKeyPath_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeKeyPath_Tests-umbrella.h"; sourceTree = "<group>"; };
-		7E64C552C101F5EF262EF20E0D2D1DEB /* AwesomeKeyPath.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AwesomeKeyPath.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		7F49CEA09E4D6665BB74935E02AC4069 /* KPClosure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPClosure.swift; path = AwesomeKeyPath/Classes/KPClosure/KPClosure.swift; sourceTree = "<group>"; };
 		81B42FA5C8F2DC5262E31AB23E68567D /* Pods-AwesomeKeyPath_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AwesomeKeyPath_Example-frameworks.sh"; sourceTree = "<group>"; };
-		8CA2B828B391720F5B0D7AE677F81E44 /* AwesomeKeyPath.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AwesomeKeyPath.modulemap; sourceTree = "<group>"; };
-		9B4A8B27C5FC81516CD30A8E619A66D6 /* AwesomeKeyPath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AwesomeKeyPath.debug.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F50F36BF5BBF7B2E082C2D127A552BF /* KPValidationEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPValidationEx.swift; path = AwesomeKeyPath/Classes/KPValidation/KPValidationEx.swift; sourceTree = "<group>"; };
+		882FF24C70559141151B3166A9BE91E8 /* KPOneWayBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPOneWayBinding.swift; sourceTree = "<group>"; };
+		8DE26AC21FA848127468AAA0D12CC15E /* KPTwoWayBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPTwoWayBinding.swift; sourceTree = "<group>"; };
+		9AF4615EC1B613AC656D66FE67EF7B65 /* KPValidation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPValidation.swift; path = AwesomeKeyPath/Classes/KPValidation/KPValidation.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0D4B49608BF4560D822B5885F597FB1 /* Pods-AwesomeKeyPath_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AwesomeKeyPath_Tests-dummy.m"; sourceTree = "<group>"; };
+		A4573AB08F3A73159B619B9A75604194 /* KPValidationEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPValidationEx.swift; path = AwesomeKeyPath/Classes/KPValidation/KPValidationEx.swift; sourceTree = "<group>"; };
+		ACC51BD875134DB273E4CD593F9352C2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		AD4F951BE69DECE705E347571D4D89F2 /* Pods-AwesomeKeyPath_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeKeyPath_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B21E73ADFBBA5EA39D92D9A78AC2015A /* AwesomeKeyPath-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AwesomeKeyPath-Info.plist"; sourceTree = "<group>"; };
-		B3D3DC0686FE523D949F333B71D8FFDE /* AwesomeKeyPath-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AwesomeKeyPath-dummy.m"; sourceTree = "<group>"; };
+		B088DFF991E20B560316CFD6F5A850C8 /* AwesomeKeyPath-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AwesomeKeyPath-dummy.m"; sourceTree = "<group>"; };
 		B552D223D63AB9E0C2C02465E1F7CBE0 /* Pods-AwesomeKeyPath_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AwesomeKeyPath_Tests.modulemap"; sourceTree = "<group>"; };
 		BA92776607360876E0BBAC9789F04902 /* Pods-AwesomeKeyPath_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeKeyPath_Tests-Info.plist"; sourceTree = "<group>"; };
-		BD55616F4EE7D63ECEBD98A4E7939CCB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		C4E2F9E24591C9E072F4479C09A4336F /* KPTwoWayBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPTwoWayBinding.swift; sourceTree = "<group>"; };
+		C7ABAE9EF14E44EBB5AD0EDE28C1746A /* AwesomeKeyPath-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AwesomeKeyPath-Info.plist"; sourceTree = "<group>"; };
+		CBD2407D8401F884BA1A0130A60B91B1 /* KPDataBindingViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPDataBindingViewModel.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPDataBindingViewModel.swift; sourceTree = "<group>"; };
 		D0388AE7415A991EC633BA82C9675A3C /* Pods-AwesomeKeyPath_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeKeyPath_Example-umbrella.h"; sourceTree = "<group>"; };
 		D4B1933B25FBAC48D9070756CCC43515 /* Pods-AwesomeKeyPath_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeKeyPath_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E6881CA88BF77AEEB662952DF3595C40 /* KPTwoWayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPTwoWayView.swift; sourceTree = "<group>"; };
 		E7086EB8E45C1781DAE86F0BCEF00B1D /* Pods-AwesomeKeyPath_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AwesomeKeyPath_Example.modulemap"; sourceTree = "<group>"; };
 		E9F1F412163D07356F698161ED630551 /* Pods-AwesomeKeyPath_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeKeyPath_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		EE186BE0C75C970DE28D64C8C331EB73 /* Pods-AwesomeKeyPath_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AwesomeKeyPath_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EF8889D645320143B9A42F48AA62D14E /* AwesomeKeyPath-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeKeyPath-prefix.pch"; sourceTree = "<group>"; };
-		F1C930ADDB0A09572E023D9C06BD03BA /* Pods_AwesomeKeyPath_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeKeyPath_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F498CFEF948F6A4D3214943407CCBE24 /* KPBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPBinding.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPBinding.swift; sourceTree = "<group>"; };
+		F1C930ADDB0A09572E023D9C06BD03BA /* Pods_AwesomeKeyPath_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AwesomeKeyPath_Example.framework; path = "Pods-AwesomeKeyPath_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1D1F7B05877AAD1B5F171EA2AD57205 /* KPBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPBinding.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPBinding.swift; sourceTree = "<group>"; };
 		F4A491D8AC175BC5A2808B98C1C292EC /* Pods-AwesomeKeyPath_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeKeyPath_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F4C0EDEA043B605CCBE04B518DF092A5 /* Pods-AwesomeKeyPath_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeKeyPath_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F69350275397B467BC231D8A86FE99F5 /* AwesomeKeyPath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AwesomeKeyPath.release.xcconfig; sourceTree = "<group>"; };
-		FDFD9016DF0EBB09EA3B00FD27949364 /* AwesomeKeyPath-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeKeyPath-umbrella.h"; sourceTree = "<group>"; };
+		F7E62200FD1E2BA8FCC209B37434C087 /* AwesomeKeyPath.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AwesomeKeyPath.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F8EAB181B19682DED7F45D7BE31F9CAC /* KPOneWayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPOneWayView.swift; sourceTree = "<group>"; };
 		FE8D91149AAA23CD73F1B1872A61C1DB /* Pods-AwesomeKeyPath_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AwesomeKeyPath_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,14 +99,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85116241B9D5984EFED82AD1DF3719D6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4F10D5D26D7DF7A9B1D66A7D30C1ACFE /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BA26AF0A1283FFC27F10B6FFFE5EE62A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,36 +107,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E227508826A762E30E218ED592F96C23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79CAC1A339FDFB981996396BDAF0A563 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1FEADE820662A82E5945599323ED0364 /* OneWay */ = {
+		099E233162CE4128D01675A76CFD0866 /* AwesomeKeyPath */ = {
 			isa = PBXGroup;
 			children = (
-				41FF502F36ED171182391720CA78627F /* KPOneWayBinding.swift */,
-				6D2016611716DDEA90EACB05B01DB742 /* KPOneWayView.swift */,
+				F1D1F7B05877AAD1B5F171EA2AD57205 /* KPBinding.swift */,
+				CBD2407D8401F884BA1A0130A60B91B1 /* KPDataBindingViewModel.swift */,
+				0BDE3AB1D437BADF51D496DC17495373 /* KPLog.swift */,
+				A8BC3FF4C1934329567331F86249B79D /* Closure */,
+				52CDC3F5F5A85A732CB837B27D57B195 /* OneWay */,
+				A66D54736504666A61D60F115EE64CDB /* Pod */,
+				9D2B3B00241F635825E45F2FF426FC6C /* Support Files */,
+				EF2D2D9C87E50AC586DBD620822E8B7B /* TwoWay */,
+				BB4626FD79E2DD02A40B65F566BC81FC /* Validation */,
 			);
-			name = OneWay;
-			path = AwesomeKeyPath/Classes/KPDataBinding/OneWay;
-			sourceTree = "<group>";
-		};
-		2AF248E2863684FBCB8562DBDB1F1449 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				7E64C552C101F5EF262EF20E0D2D1DEB /* AwesomeKeyPath.podspec */,
-				BD55616F4EE7D63ECEBD98A4E7939CCB /* LICENSE */,
-				018ADC067510209AEC1929F10B1DB8A6 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		3F63828CF853A2BD09E03ECAB1B28BC9 /* Validation */ = {
-			isa = PBXGroup;
-			children = (
-				32AB4CB0D6E918CC7373B019DD5EDDC2 /* KPValidation.swift */,
-				9F50F36BF5BBF7B2E082C2D127A552BF /* KPValidationEx.swift */,
-			);
-			name = Validation;
+			name = AwesomeKeyPath;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		502634D45419D71554507C355CF8ECA7 /* Targets Support Files */ = {
@@ -152,6 +142,16 @@
 				6B6B3F66756BC336465B3A71C70B18EA /* Pods-AwesomeKeyPath_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		52CDC3F5F5A85A732CB837B27D57B195 /* OneWay */ = {
+			isa = PBXGroup;
+			children = (
+				882FF24C70559141151B3166A9BE91E8 /* KPOneWayBinding.swift */,
+				F8EAB181B19682DED7F45D7BE31F9CAC /* KPOneWayView.swift */,
+			);
+			name = OneWay;
+			path = AwesomeKeyPath/Classes/KPDataBinding/OneWay;
 			sourceTree = "<group>";
 		};
 		6B6B3F66756BC336465B3A71C70B18EA /* Pods-AwesomeKeyPath_Tests */ = {
@@ -170,14 +170,12 @@
 			path = "Target Support Files/Pods-AwesomeKeyPath_Tests";
 			sourceTree = "<group>";
 		};
-		6EE22CA98983101BAC3F081241BFEEC2 /* TwoWay */ = {
+		7D0F31518341EEAC80D79DF9948B136B /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C4E2F9E24591C9E072F4479C09A4336F /* KPTwoWayBinding.swift */,
-				4CDD22C7147C06626D258CC197EE4C13 /* KPTwoWayView.swift */,
+				099E233162CE4128D01675A76CFD0866 /* AwesomeKeyPath */,
 			);
-			name = TwoWay;
-			path = AwesomeKeyPath/Classes/KPDataBinding/TwoWay;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		804E9C32CE25728232AE4BF858C2E1EA /* Products */ = {
@@ -207,43 +205,46 @@
 			path = "Target Support Files/Pods-AwesomeKeyPath_Example";
 			sourceTree = "<group>";
 		};
-		921D610E6C5E6D97459E519B42B5FD1D /* Development Pods */ = {
+		9D2B3B00241F635825E45F2FF426FC6C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A4CBB745EEB6F15BFD9D6B984C02F50E /* AwesomeKeyPath */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		9E6C0DCB8A459A2AFF8AD78A1782A398 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8CA2B828B391720F5B0D7AE677F81E44 /* AwesomeKeyPath.modulemap */,
-				B3D3DC0686FE523D949F333B71D8FFDE /* AwesomeKeyPath-dummy.m */,
-				B21E73ADFBBA5EA39D92D9A78AC2015A /* AwesomeKeyPath-Info.plist */,
-				EF8889D645320143B9A42F48AA62D14E /* AwesomeKeyPath-prefix.pch */,
-				FDFD9016DF0EBB09EA3B00FD27949364 /* AwesomeKeyPath-umbrella.h */,
-				9B4A8B27C5FC81516CD30A8E619A66D6 /* AwesomeKeyPath.debug.xcconfig */,
-				F69350275397B467BC231D8A86FE99F5 /* AwesomeKeyPath.release.xcconfig */,
+				320FCD2EC0D28B23C7C8D5404D1C76EA /* AwesomeKeyPath.modulemap */,
+				B088DFF991E20B560316CFD6F5A850C8 /* AwesomeKeyPath-dummy.m */,
+				C7ABAE9EF14E44EBB5AD0EDE28C1746A /* AwesomeKeyPath-Info.plist */,
+				5381256D4B5BD4A8E75A06CEE763EB86 /* AwesomeKeyPath-prefix.pch */,
+				37DD43EF252A663090042ECE0A564D6C /* AwesomeKeyPath-umbrella.h */,
+				5599F61AD2132F2368394885EE8DBC73 /* AwesomeKeyPath.debug.xcconfig */,
+				60BEF9FB7E18EDE99843DC0CDA7AC756 /* AwesomeKeyPath.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/AwesomeKeyPath";
 			sourceTree = "<group>";
 		};
-		A4CBB745EEB6F15BFD9D6B984C02F50E /* AwesomeKeyPath */ = {
+		A66D54736504666A61D60F115EE64CDB /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				F498CFEF948F6A4D3214943407CCBE24 /* KPBinding.swift */,
-				4A9D0B25934AB2C10726A9ED62BA9A11 /* KPDataBindingViewModel.swift */,
-				68C02E6AAB6B88A9224BA9EB5DCDA1C0 /* KPLog.swift */,
-				1FEADE820662A82E5945599323ED0364 /* OneWay */,
-				2AF248E2863684FBCB8562DBDB1F1449 /* Pod */,
-				9E6C0DCB8A459A2AFF8AD78A1782A398 /* Support Files */,
-				6EE22CA98983101BAC3F081241BFEEC2 /* TwoWay */,
-				3F63828CF853A2BD09E03ECAB1B28BC9 /* Validation */,
+				F7E62200FD1E2BA8FCC209B37434C087 /* AwesomeKeyPath.podspec */,
+				ACC51BD875134DB273E4CD593F9352C2 /* LICENSE */,
+				115A23998C44BA7EFFEA51DB86E8E35F /* README.md */,
 			);
-			name = AwesomeKeyPath;
-			path = ../..;
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		A8BC3FF4C1934329567331F86249B79D /* Closure */ = {
+			isa = PBXGroup;
+			children = (
+				7F49CEA09E4D6665BB74935E02AC4069 /* KPClosure.swift */,
+			);
+			name = Closure;
+			sourceTree = "<group>";
+		};
+		BB4626FD79E2DD02A40B65F566BC81FC /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				9AF4615EC1B613AC656D66FE67EF7B65 /* KPValidation.swift */,
+				A4573AB08F3A73159B619B9A75604194 /* KPValidationEx.swift */,
+			);
+			name = Validation;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -258,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				921D610E6C5E6D97459E519B42B5FD1D /* Development Pods */,
+				7D0F31518341EEAC80D79DF9948B136B /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				804E9C32CE25728232AE4BF858C2E1EA /* Products */,
 				502634D45419D71554507C355CF8ECA7 /* Targets Support Files */,
@@ -273,6 +274,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EF2D2D9C87E50AC586DBD620822E8B7B /* TwoWay */ = {
+			isa = PBXGroup;
+			children = (
+				8DE26AC21FA848127468AAA0D12CC15E /* KPTwoWayBinding.swift */,
+				E6881CA88BF77AEEB662952DF3595C40 /* KPTwoWayView.swift */,
+			);
+			name = TwoWay;
+			path = AwesomeKeyPath/Classes/KPDataBinding/TwoWay;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -284,19 +295,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14B4A728195BC8F3313CC76EFFA36084 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				852046A5E72C3DB67212EFD2AD7D36DD /* AwesomeKeyPath-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AB9EEA09B82308A0A68441D17DF54959 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D68C7CFC687C30B7833A4829CCA5FFE1 /* Pods-AwesomeKeyPath_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E10C42D44402CAE840F54961017BB7B3 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				32582383350040C6FE9A37A72DE6598C /* AwesomeKeyPath-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,12 +335,12 @@
 		};
 		D97DC24A3642B06BB7368DF79CE5A95E /* AwesomeKeyPath */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 12F38D250B606357CC779B3B5FF3F03F /* Build configuration list for PBXNativeTarget "AwesomeKeyPath" */;
+			buildConfigurationList = 549DC111875A15BC70856176A96C155D /* Build configuration list for PBXNativeTarget "AwesomeKeyPath" */;
 			buildPhases = (
-				E10C42D44402CAE840F54961017BB7B3 /* Headers */,
-				77DB9BCA8B81F1EDF0AC26D560D70ADD /* Sources */,
-				85116241B9D5984EFED82AD1DF3719D6 /* Frameworks */,
-				0F82296BCCA9B9DFCFA77F3F41550F60 /* Resources */,
+				14B4A728195BC8F3313CC76EFFA36084 /* Headers */,
+				B4A59B7F33FC6D24E96287E73A539357 /* Sources */,
+				E227508826A762E30E218ED592F96C23 /* Frameworks */,
+				C0FCE7265B1DF7D6B7FD52135C1F6B71 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -367,11 +378,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
-				TargetAttributes = {
-					D97DC24A3642B06BB7368DF79CE5A95E = {
-						LastSwiftMigration = 1160;
-					};
-				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -394,13 +400,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0F82296BCCA9B9DFCFA77F3F41550F60 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		779BB1847979485084F271D456166798 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,6 +408,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		83C4D4FCACCF4093D44051102028ABCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0FCE7265B1DF7D6B7FD52135C1F6B71 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -434,20 +440,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77DB9BCA8B81F1EDF0AC26D560D70ADD /* Sources */ = {
+		B4A59B7F33FC6D24E96287E73A539357 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3BD3357DC1A54C0E11434BBEA807AC0 /* AwesomeKeyPath-dummy.m in Sources */,
-				7A0026B46F3986620039EDD47D0FEA9F /* KPBinding.swift in Sources */,
-				8740F84EDCD049D0287CD5585311F220 /* KPDataBindingViewModel.swift in Sources */,
-				94E1F271C41DEC0FE7A2F9B8820E6E91 /* KPLog.swift in Sources */,
-				A0682B14963729010046FD9ADDD088C7 /* KPOneWayBinding.swift in Sources */,
-				0E913C462158D3C4A1A1045B042244E0 /* KPOneWayView.swift in Sources */,
-				7715DEAF0841D7537383BBA483261CBC /* KPTwoWayBinding.swift in Sources */,
-				73F6314AB3642CA3B595E6FCD1D75790 /* KPTwoWayView.swift in Sources */,
-				73032277014D91B0C580D64C57A0263C /* KPValidation.swift in Sources */,
-				CF4193E38A9C7B4EF308508BD286EC62 /* KPValidationEx.swift in Sources */,
+				8F824D2F97F32DFD8D2F0B864CB0A822 /* AwesomeKeyPath-dummy.m in Sources */,
+				03B2540B3F33AA0A2CA96D024CE7208D /* KPBinding.swift in Sources */,
+				7BCDE77C6A535FA319C41FB532A07A3C /* KPClosure.swift in Sources */,
+				AC5C85903FAB1657337327A7E01D08D8 /* KPDataBindingViewModel.swift in Sources */,
+				B5B53517B125360D5655DEB79C97AE3D /* KPLog.swift in Sources */,
+				BF56D22238404C3EC08FEE5F979E0E9A /* KPOneWayBinding.swift in Sources */,
+				7C0493EF8DDDB632752B0A8CA34EA077 /* KPOneWayView.swift in Sources */,
+				D19E5F6F38CB93911ACBEA031DFD842C /* KPTwoWayBinding.swift in Sources */,
+				8744169071FCE8F04F6204A9E50B698C /* KPTwoWayView.swift in Sources */,
+				2366CA2BE1EA745A2E2CE3E8D6736ABC /* KPValidation.swift in Sources */,
+				A7AE2DB798FC6055F8CC7901AB2A5605 /* KPValidationEx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +476,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		03859D39AD0A8C999E82CE579934BEB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5599F61AD2132F2368394885EE8DBC73 /* AwesomeKeyPath.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AwesomeKeyPath/AwesomeKeyPath-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AwesomeKeyPath/AwesomeKeyPath-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AwesomeKeyPath/AwesomeKeyPath.modulemap";
+				PRODUCT_MODULE_NAME = AwesomeKeyPath;
+				PRODUCT_NAME = AwesomeKeyPath;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		0C0A820382CAD7A69131B842BCEF9234 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4C0EDEA043B605CCBE04B518DF092A5 /* Pods-AwesomeKeyPath_Example.debug.xcconfig */;
@@ -557,7 +596,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -598,9 +638,9 @@
 			};
 			name = Debug;
 		};
-		42C8496D9144C9E878BA546F96041D39 /* Release */ = {
+		8E4F103D2DC2DB89B1F002F165DBFE15 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F69350275397B467BC231D8A86FE99F5 /* AwesomeKeyPath.release.xcconfig */;
+			baseConfigurationReference = 60BEF9FB7E18EDE99843DC0CDA7AC756 /* AwesomeKeyPath.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
@@ -623,7 +663,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -767,50 +807,9 @@
 			};
 			name = Release;
 		};
-		F70B64AC37140F5FBC5233AC94421D35 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B4A8B27C5FC81516CD30A8E619A66D6 /* AwesomeKeyPath.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AwesomeKeyPath/AwesomeKeyPath-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AwesomeKeyPath/AwesomeKeyPath-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AwesomeKeyPath/AwesomeKeyPath.modulemap";
-				PRODUCT_MODULE_NAME = AwesomeKeyPath;
-				PRODUCT_NAME = AwesomeKeyPath;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		12F38D250B606357CC779B3B5FF3F03F /* Build configuration list for PBXNativeTarget "AwesomeKeyPath" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F70B64AC37140F5FBC5233AC94421D35 /* Debug */,
-				42C8496D9144C9E878BA546F96041D39 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		3EB5B2AA083B976A934403AA0475516F /* Build configuration list for PBXNativeTarget "Pods-AwesomeKeyPath_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -825,6 +824,15 @@
 			buildConfigurations = (
 				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
 				257497152829C177993B5EC99C1D227A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		549DC111875A15BC70856176A96C155D /* Build configuration list for PBXNativeTarget "AwesomeKeyPath" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03859D39AD0A8C999E82CE579934BEB5 /* Debug */,
+				8E4F103D2DC2DB89B1F002F165DBFE15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,7 +1,7 @@
 ## KeyPath is awesome 🤟
 
 
-* Using KeyPath in Data Binding
+* Using KeyPath in Data Binding, one way and two way both are easy-peasy
 
 ```swift
 let user = User(title: "Mr.", email: "")
@@ -12,12 +12,24 @@ viewModel.bind(user, [
 ])
 ```
 
-* Using KeyPath in Validation
+* Using KeyPath in Validation, KeyPath is coordinated with closures.
 
 ```swift
-guard user.validate(\.email.isEmpty.not, \.email.isEmail) else {
+guard user.validate(
+	\.email.isEmpty.not, 
+	\.email.isEmail, 
+	{ $0.email.hasSuffix("@gmail.com") }
+) else {    
     return
 }
+```
+
+* Transform KeyPath into Closure
+
+```swift
+let closure1: (User) -> Bool = \User.password.count + { $0 >= 8 && $0 <= 20 }
+
+let closure2: (User) -> String.Index? = \User.name + { $0.firstIndex(of: "T") }
 ```
 
 ## AwesomeKeyPath in Action [Read More](document.md)
@@ -57,7 +69,7 @@ class ViewController: UIViewController {
             groupNameLbl     <-  \User.groupName,
          
             nameField        <-> \User.name,
-	    emailField       <-> \User.email,
+            emailField       <-> \User.email,
 	    
             activitySlider   <-> \User.aFloat,
             likeKiwiSwitcher <-> \User.isOn,

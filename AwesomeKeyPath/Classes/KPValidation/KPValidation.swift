@@ -31,5 +31,3 @@ extension KPValidation {
         return true
     }
 }
-
-
