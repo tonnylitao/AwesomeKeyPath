@@ -9,16 +9,14 @@
 
 import Foundation
 
-infix operator +
-
 extension KeyPath {
     
     /*
-     let closure1: (User) -> Bool = \User.aString.count + { $0 > 5 }
+     let closure1: (User) -> Bool = (\User.aString.count).apply{ $0 > 5 }
      
-     let closure2: (User) -> Int = \User.aString.count + { $0 + 5 }
+     let closure2: (User) -> Int = (\User.aString.count).apply{ $0 + 5 }
     */
-    static func +<NewValue>(keyPath: KeyPath<Root, Value>, closure: @escaping (Value) -> NewValue) -> (Root) -> NewValue {
-        return { closure( $0[keyPath: keyPath] ) }
+    func apply<NewValue>(_ closure: @escaping (Value) -> NewValue) -> (Root) -> NewValue {
+        return { closure( $0[keyPath: self] ) }
     }
 }
