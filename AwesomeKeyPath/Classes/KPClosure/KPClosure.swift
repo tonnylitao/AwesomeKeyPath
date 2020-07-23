@@ -12,11 +12,11 @@ import Foundation
 extension KeyPath {
     
     /*
-     let closure1: (User) -> Bool = (\User.aString.count).apply{ $0 > 5 }
+     let closure1: (User) -> Bool = (\User.aString.count).closure{ $0 > 5 }
      
-     let closure2: (User) -> Int = (\User.aString.count).apply{ $0 + 5 }
+     let closure2: (User) -> Int = (\User.aString.count).closure{ $0 + 5 }
     */
-    func apply<NewValue>(_ closure: @escaping (Value) -> NewValue) -> (Root) -> NewValue {
+    func closure<NewValue>(_ closure: @escaping (Value) -> NewValue) -> (Root) -> NewValue {
         return { closure( $0[keyPath: self] ) }
     }
 }

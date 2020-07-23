@@ -27,9 +27,9 @@ guard user.validate(
 * Transform KeyPath into Closure
 
 ```swift
-let closure1: (User) -> Bool = \User.password.count + { $0 >= 8 && $0 <= 20 }
+let closure1: (User) -> Bool = (\User.password.count).closure{ $0 >= 8 && $0 <= 20 }
 
-let closure2: (User) -> String.Index? = \User.name + { $0.firstIndex(of: "T") }
+let closure2: (User) -> String.Index? = (\User.name).closure{ $0.firstIndex(of: "T") }
 ```
 
 ## AwesomeKeyPath in Action [Read More](document.md)
