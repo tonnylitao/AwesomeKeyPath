@@ -16,9 +16,9 @@ viewModel.bind(user, [
 
 ```swift
 guard user.validate(
-	\.email.isEmpty.not, 
-	\.email.isEmail, 
-	{ $0.email.hasSuffix("@gmail.com") }
+    \.email.isEmpty.not, 
+    \.email.isEmail, 
+    { $0.email.hasSuffix("@gmail.com") }
 ) else {    
     return
 }
