@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeKeyPath'
-  s.version          = '0.2.5'
+  s.version          = '0.3.5'
   s.summary          = 'Use Swift Keypath in DataBinding, Predication, Testing etc.'
   s.swift_versions   = '5'
 
@@ -39,6 +39,10 @@ Pod::Spec.new do |s|
   
   s.subspec 'Closure' do |closure|
     closure.source_files = 'AwesomeKeyPath/Classes/KPClosure/*'
+  end
+  
+  s.subspec 'Collection' do |collection|
+      collection.source_files = 'AwesomeKeyPath/Classes/KPCollection/*'
   end
   
   # s.resource_bundles = {

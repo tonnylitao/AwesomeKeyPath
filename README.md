@@ -24,6 +24,18 @@ guard user.validate(
 }
 ```
 
+* Using KeyPath in Collection
+
+```swift
+let result1 = arr.filter(\.name) { $0.count > 2 }
+
+let result2 = arr.map(\.name) { $0.count }
+
+arr.forEach(\.name) {
+    print($0)
+}
+```
+
 * Transform KeyPath into Closure
 
 ```swift
