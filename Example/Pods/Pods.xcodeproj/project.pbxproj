@@ -8,33 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		0AF1832455BB944BBC0E74F57D0FD924 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		1CB1A40298376A1D63417CD3FE740D06 /* KPOneWayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9EBA7FD9258A34AEB6D81F329950A2 /* KPOneWayView.swift */; };
-		222851B170AD6F36982B5C54D64790C9 /* KPTwoWayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1079F782789C2AAB6A99790A1C46E974 /* KPTwoWayView.swift */; };
-		22A23AE2EC2724A260F9896658159DFC /* KPValidationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C673A90BE077AB3A8FAF1A87C2CE80 /* KPValidationEx.swift */; };
+		212CA3164368A174AB15FC700343E52E /* KPBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E8C199907FC247DA4B290158E0702 /* KPBinding.swift */; };
 		2C0524F1BB466D0ED42E6560856BF89A /* Pods-AwesomeKeyPath_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD672C163AEF95B5FD2C7F01D7CAC1 /* Pods-AwesomeKeyPath_Example-dummy.m */; };
-		36E3666FA64FC2A397C115039DD74BB1 /* KPLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D52F73A4CF1659A87A5B5BD9FD590F /* KPLog.swift */; };
-		59F18BAB2DDFD2C7C1FFCF13C9382781 /* KPValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F1B8AF50B4D65D2AFBF903E7DA8594 /* KPValidation.swift */; };
-		6226E46F895538E84B4ECFB472F994CB /* KPTwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F938FDEBE9DB2FCB043C1A23105A58 /* KPTwoWayBinding.swift */; };
+		37D54F6BC3D264ED93A81FFA5BFF4ED6 /* KPInfixOperatorLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE2E88E4975CEEB6FF8B7E51340864 /* KPInfixOperatorLogical.swift */; };
+		455E6E15170B513B778A18ED987D5655 /* KPValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B280A584551B62348C4EC2FF45718D /* KPValidation.swift */; };
+		5A3EA5254AD6C9471D1631BF5CC250E1 /* KPInfixOperatorComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB4AD6CC75D99E0A694CE0A383A1CA7 /* KPInfixOperatorComparison.swift */; };
+		5FC89E05453F380BF691D905D1A8DBC9 /* KPInfixOperatorAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A900A687B3E08FC068A4FD910E6F9867 /* KPInfixOperatorAddition.swift */; };
 		652B5B08AF5241193C708B635C66121C /* Pods-AwesomeKeyPath_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4B49608BF4560D822B5885F597FB1 /* Pods-AwesomeKeyPath_Tests-dummy.m */; };
-		72C3901AC4B8F810F89D3EADA12D3B88 /* KPClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364513C5441293A0352B234F0B88540 /* KPClosure.swift */; };
-		9607F2539E0A7C0B815B28C88D8F75A6 /* KPCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822BD0EB1F0C394737F0D1FB41836B2D /* KPCollection.swift */; };
-		961A029E8E56F4746BAD3D30A4A032C8 /* AwesomeKeyPath-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8966D88EF5B2C90D411D53F1C03D7472 /* AwesomeKeyPath-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		795FE4BF6AA5879891B0C3582F18502F /* KPCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5432C4D1D0691EB7D2508FFD0BD69F4C /* KPCollection.swift */; };
+		8532B6D778CD931C0CD91F3C02C2CEFD /* AwesomeKeyPath-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E2F064F217CCA71BE75E7A14FAB01C7 /* AwesomeKeyPath-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903817E5AD2271A0481725D30AB35B11 /* KPTwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFDE171E304D2554862A22E528B0AD9 /* KPTwoWayBinding.swift */; };
 		989AD3F639AC9D4916F0470EFD4DFA2A /* Pods-AwesomeKeyPath_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0388AE7415A991EC633BA82C9675A3C /* Pods-AwesomeKeyPath_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9EE800E31B8709007767C8D7731FD5CF /* KPOneWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D323269F8D6A463F44D03C2B75EE5F6 /* KPOneWayBinding.swift */; };
-		A8E70D8B01C1EF0D3D19F8A044F8A706 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		ABDFC15386BAC6C55CA24B238072038C /* KPBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4EA90BCC58BC5E449C72D6EAD9CDF /* KPBinding.swift */; };
-		B59DC45624CB99A9001FC201 /* KPInfixOperatorAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59DC45524CB99A9001FC201 /* KPInfixOperatorAddition.swift */; };
-		B59DC45824CBA334001FC201 /* KPInfixOperatorMultiplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59DC45724CBA334001FC201 /* KPInfixOperatorMultiplication.swift */; };
-		B59DC45A24CBD71D001FC201 /* KPInfixOperatorRangeFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59DC45924CBD71D001FC201 /* KPInfixOperatorRangeFormation.swift */; };
-		B59DC45C24CBD900001FC201 /* KPInfixOperatorNilCoalescing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59DC45B24CBD900001FC201 /* KPInfixOperatorNilCoalescing.swift */; };
-		B59DC45E24CC146E001FC201 /* KPInfixOperatorComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59DC45D24CC146E001FC201 /* KPInfixOperatorComparison.swift */; };
-		B59DC46024CC194D001FC201 /* KPInfixOperatorLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59DC45F24CC194D001FC201 /* KPInfixOperatorLogical.swift */; };
-		B59DC46224CC1BDB001FC201 /* KPInfixOperatorAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59DC46124CC1BDB001FC201 /* KPInfixOperatorAssignment.swift */; };
-		B9D534ECCFB782B88B487CE2DD61CA00 /* AwesomeKeyPath-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BFFE811DE8F417679CE231404B872B /* AwesomeKeyPath-dummy.m */; };
-		C18440187B99B8ADE7BB46CB9D6F6233 /* KPDataBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0DFCDB2CBC664CC27FAE214DFD453 /* KPDataBindingViewModel.swift */; };
+		9C8F10303891A020474C546D854FE418 /* KPClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E003F53AC748EDB1597EEE927C8B447C /* KPClosure.swift */; };
+		9F06F18682847F87CFE4C2D4757C5B23 /* KPOneWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A74F459085FA82723A0DAB22DF2E6C /* KPOneWayBinding.swift */; };
+		A6484838C7AF65D366134BD216A43567 /* KPValidationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB01A4E723AF988B755723D47B5C1C51 /* KPValidationEx.swift */; };
+		B1C3DF800691727623915A1297FAC7D2 /* KPOneWayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303BA8A25C650099843EE99FE804E245 /* KPOneWayView.swift */; };
+		B29A71714071632564F73E9B21BBBF71 /* KPInfixOperatorAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A8EE468EF1123ACB2AD398918C0A /* KPInfixOperatorAssignment.swift */; };
+		CD67BA36763D043E47E1ACC0FFD94F9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		D4C7129E5CA2438BB211A7B10CE45A97 /* KPTwoWayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7CCC7DEFB602BAEDF1CE7182379984 /* KPTwoWayView.swift */; };
+		D6534C0E8E8F15BCDC8469FAEF7E0D97 /* AwesomeKeyPath-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C3455FD5B330DB48CF6AF91A23738 /* AwesomeKeyPath-dummy.m */; };
 		D68C7CFC687C30B7833A4829CCA5FFE1 /* Pods-AwesomeKeyPath_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C8ACE556295C034F9E35991A372491F /* Pods-AwesomeKeyPath_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E26898C105BB02AD8E93796D4F85A7EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		F8738428B0721D83EB99EC850953597D /* KPPrefixOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC014983BEA559B8BE81EE83BC64E6DB /* KPPrefixOperators.swift */; };
+		F380032FED5A0C624EEFF5A3EA178D42 /* KPDataBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E5A0F5D2EB4645654688122B7B0764 /* KPDataBindingViewModel.swift */; };
+		FEBD3B7320C5D17EE14AD2A95274BA02 /* KPLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D852D9FA9162991F1B820FACD4B9E8A /* KPLog.swift */; };
+		FF25026771C8FF38058132B5BFA9AC76 /* KPPrefixOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A591AC426ED7D9ECA0EB310EDBE872 /* KPPrefixOperators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,60 +52,65 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1079F782789C2AAB6A99790A1C46E974 /* KPTwoWayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPTwoWayView.swift; sourceTree = "<group>"; };
-		12D4EA90BCC58BC5E449C72D6EAD9CDF /* KPBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPBinding.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPBinding.swift; sourceTree = "<group>"; };
+		00A74F459085FA82723A0DAB22DF2E6C /* KPOneWayBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPOneWayBinding.swift; sourceTree = "<group>"; };
 		14CD672C163AEF95B5FD2C7F01D7CAC1 /* Pods-AwesomeKeyPath_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AwesomeKeyPath_Example-dummy.m"; sourceTree = "<group>"; };
-		1641228EC48EA20E183BD83E8B846C78 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		273CBC75459A011D64B70552D9155E52 /* Pods_AwesomeKeyPath_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeKeyPath_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EC3DD0132F14F0EB500DC562DF61754 /* AwesomeKeyPath.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AwesomeKeyPath.modulemap; sourceTree = "<group>"; };
+		273CBC75459A011D64B70552D9155E52 /* Pods_AwesomeKeyPath_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AwesomeKeyPath_Tests.framework; path = "Pods-AwesomeKeyPath_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28EE2E88E4975CEEB6FF8B7E51340864 /* KPInfixOperatorLogical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPInfixOperatorLogical.swift; path = AwesomeKeyPath/Classes/KPKit/KPInfixOperatorLogical.swift; sourceTree = "<group>"; };
+		2F7CCC7DEFB602BAEDF1CE7182379984 /* KPTwoWayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPTwoWayView.swift; sourceTree = "<group>"; };
+		303BA8A25C650099843EE99FE804E245 /* KPOneWayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPOneWayView.swift; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3659DB9BE377E4EE5403DCD0CB37B2D5 /* Pods-AwesomeKeyPath_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeKeyPath_Example-Info.plist"; sourceTree = "<group>"; };
-		48C673A90BE077AB3A8FAF1A87C2CE80 /* KPValidationEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPValidationEx.swift; path = AwesomeKeyPath/Classes/KPValidation/KPValidationEx.swift; sourceTree = "<group>"; };
-		591B8E1B85981BC1D1023EE8F406CDE1 /* AwesomeKeyPath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AwesomeKeyPath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D323269F8D6A463F44D03C2B75EE5F6 /* KPOneWayBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPOneWayBinding.swift; sourceTree = "<group>"; };
-		5DE0DFCDB2CBC664CC27FAE214DFD453 /* KPDataBindingViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPDataBindingViewModel.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPDataBindingViewModel.swift; sourceTree = "<group>"; };
-		5E9EBA7FD9258A34AEB6D81F329950A2 /* KPOneWayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPOneWayView.swift; sourceTree = "<group>"; };
+		3E9C3455FD5B330DB48CF6AF91A23738 /* AwesomeKeyPath-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AwesomeKeyPath-dummy.m"; sourceTree = "<group>"; };
+		5432C4D1D0691EB7D2508FFD0BD69F4C /* KPCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPCollection.swift; path = AwesomeKeyPath/Classes/KPKit/KPCollection.swift; sourceTree = "<group>"; };
+		591B8E1B85981BC1D1023EE8F406CDE1 /* AwesomeKeyPath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AwesomeKeyPath.framework; path = AwesomeKeyPath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D852D9FA9162991F1B820FACD4B9E8A /* KPLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPLog.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPLog.swift; sourceTree = "<group>"; };
+		5DB4AD6CC75D99E0A694CE0A383A1CA7 /* KPInfixOperatorComparison.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPInfixOperatorComparison.swift; path = AwesomeKeyPath/Classes/KPKit/KPInfixOperatorComparison.swift; sourceTree = "<group>"; };
+		5EFDE171E304D2554862A22E528B0AD9 /* KPTwoWayBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPTwoWayBinding.swift; sourceTree = "<group>"; };
+		64A591AC426ED7D9ECA0EB310EDBE872 /* KPPrefixOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPPrefixOperators.swift; path = AwesomeKeyPath/Classes/KPKit/KPPrefixOperators.swift; sourceTree = "<group>"; };
+		65B280A584551B62348C4EC2FF45718D /* KPValidation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPValidation.swift; path = AwesomeKeyPath/Classes/KPValidation/KPValidation.swift; sourceTree = "<group>"; };
 		66BEE3B4932A883EBAE07FE8E78916F9 /* Pods-AwesomeKeyPath_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeKeyPath_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		714E6E0FA352EEE0C9F65FE3C6603F02 /* AwesomeKeyPath.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AwesomeKeyPath.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		7168029A2BBB879D3435BB04AEDAFEC9 /* AwesomeKeyPath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AwesomeKeyPath.release.xcconfig; sourceTree = "<group>"; };
-		7364513C5441293A0352B234F0B88540 /* KPClosure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPClosure.swift; path = AwesomeKeyPath/Classes/KPKit/KPClosure.swift; sourceTree = "<group>"; };
-		7644DC713B0FE59D9600ADF4DBAE47CD /* AwesomeKeyPath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AwesomeKeyPath.debug.xcconfig; sourceTree = "<group>"; };
-		77BFFE811DE8F417679CE231404B872B /* AwesomeKeyPath-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AwesomeKeyPath-dummy.m"; sourceTree = "<group>"; };
+		6EC4783BDFFAE4ED620FCD1D484B8B37 /* AwesomeKeyPath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AwesomeKeyPath.debug.xcconfig; sourceTree = "<group>"; };
+		76B3FCFB79138C1B449DE1EB3D7E5249 /* AwesomeKeyPath.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AwesomeKeyPath.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7BFA0E69E86AA1FA5F1F9C27FF814179 /* AwesomeKeyPath-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AwesomeKeyPath-Info.plist"; sourceTree = "<group>"; };
 		7C8ACE556295C034F9E35991A372491F /* Pods-AwesomeKeyPath_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeKeyPath_Tests-umbrella.h"; sourceTree = "<group>"; };
 		81B42FA5C8F2DC5262E31AB23E68567D /* Pods-AwesomeKeyPath_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AwesomeKeyPath_Example-frameworks.sh"; sourceTree = "<group>"; };
-		81F938FDEBE9DB2FCB043C1A23105A58 /* KPTwoWayBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KPTwoWayBinding.swift; sourceTree = "<group>"; };
-		822BD0EB1F0C394737F0D1FB41836B2D /* KPCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPCollection.swift; path = AwesomeKeyPath/Classes/KPKit/KPCollection.swift; sourceTree = "<group>"; };
-		87F1B8AF50B4D65D2AFBF903E7DA8594 /* KPValidation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPValidation.swift; path = AwesomeKeyPath/Classes/KPValidation/KPValidation.swift; sourceTree = "<group>"; };
-		8966D88EF5B2C90D411D53F1C03D7472 /* AwesomeKeyPath-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeKeyPath-umbrella.h"; sourceTree = "<group>"; };
-		988FC03075B2DE013CE96723EA06EAFC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		84D4BFEDCB588D36E2DD1AA61210DFCF /* AwesomeKeyPath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AwesomeKeyPath.release.xcconfig; sourceTree = "<group>"; };
+		8E2F064F217CCA71BE75E7A14FAB01C7 /* AwesomeKeyPath-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeKeyPath-umbrella.h"; sourceTree = "<group>"; };
+		9D0E8C199907FC247DA4B290158E0702 /* KPBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPBinding.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPBinding.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9FC6F5CFD69EA2DD0125DF14ABF47184 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		A0D4B49608BF4560D822B5885F597FB1 /* Pods-AwesomeKeyPath_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AwesomeKeyPath_Tests-dummy.m"; sourceTree = "<group>"; };
+		A900A687B3E08FC068A4FD910E6F9867 /* KPInfixOperatorAddition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPInfixOperatorAddition.swift; path = AwesomeKeyPath/Classes/KPKit/KPInfixOperatorAddition.swift; sourceTree = "<group>"; };
 		AD4F951BE69DECE705E347571D4D89F2 /* Pods-AwesomeKeyPath_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeKeyPath_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B472B9129D7D61789C6DF60511E2031A /* AwesomeKeyPath-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeKeyPath-prefix.pch"; sourceTree = "<group>"; };
-		B4D52F73A4CF1659A87A5B5BD9FD590F /* KPLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPLog.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPLog.swift; sourceTree = "<group>"; };
+		B405E7B7957193E8B86F58E959917D94 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		B552D223D63AB9E0C2C02465E1F7CBE0 /* Pods-AwesomeKeyPath_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AwesomeKeyPath_Tests.modulemap"; sourceTree = "<group>"; };
-		B59DC45524CB99A9001FC201 /* KPInfixOperatorAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KPInfixOperatorAddition.swift; path = AwesomeKeyPath/Classes/KPKit/KPInfixOperatorAddition.swift; sourceTree = "<group>"; };
-		B59DC45724CBA334001FC201 /* KPInfixOperatorMultiplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPInfixOperatorMultiplication.swift; sourceTree = "<group>"; };
-		B59DC45924CBD71D001FC201 /* KPInfixOperatorRangeFormation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPInfixOperatorRangeFormation.swift; sourceTree = "<group>"; };
-		B59DC45B24CBD900001FC201 /* KPInfixOperatorNilCoalescing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPInfixOperatorNilCoalescing.swift; sourceTree = "<group>"; };
-		B59DC45D24CC146E001FC201 /* KPInfixOperatorComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KPInfixOperatorComparison.swift; path = AwesomeKeyPath/Classes/KPKit/KPInfixOperatorComparison.swift; sourceTree = "<group>"; };
-		B59DC45F24CC194D001FC201 /* KPInfixOperatorLogical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KPInfixOperatorLogical.swift; path = AwesomeKeyPath/Classes/KPKit/KPInfixOperatorLogical.swift; sourceTree = "<group>"; };
-		B59DC46124CC1BDB001FC201 /* KPInfixOperatorAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KPInfixOperatorAssignment.swift; path = AwesomeKeyPath/Classes/KPKit/KPInfixOperatorAssignment.swift; sourceTree = "<group>"; };
 		BA92776607360876E0BBAC9789F04902 /* Pods-AwesomeKeyPath_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeKeyPath_Tests-Info.plist"; sourceTree = "<group>"; };
-		C9779D5360661B6058C111AA295D2092 /* AwesomeKeyPath-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AwesomeKeyPath-Info.plist"; sourceTree = "<group>"; };
+		BB01A4E723AF988B755723D47B5C1C51 /* KPValidationEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPValidationEx.swift; path = AwesomeKeyPath/Classes/KPValidation/KPValidationEx.swift; sourceTree = "<group>"; };
 		D0388AE7415A991EC633BA82C9675A3C /* Pods-AwesomeKeyPath_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeKeyPath_Example-umbrella.h"; sourceTree = "<group>"; };
+		D259587AF0836D60C05D61EEA4CA6E5F /* AwesomeKeyPath.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AwesomeKeyPath.modulemap; sourceTree = "<group>"; };
 		D4B1933B25FBAC48D9070756CCC43515 /* Pods-AwesomeKeyPath_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeKeyPath_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		DC014983BEA559B8BE81EE83BC64E6DB /* KPPrefixOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPPrefixOperators.swift; path = AwesomeKeyPath/Classes/KPKit/KPPrefixOperators.swift; sourceTree = "<group>"; };
+		DCC1A8EE468EF1123ACB2AD398918C0A /* KPInfixOperatorAssignment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPInfixOperatorAssignment.swift; path = AwesomeKeyPath/Classes/KPKit/KPInfixOperatorAssignment.swift; sourceTree = "<group>"; };
+		DED6C0210D23837549F178A3B09FA56C /* AwesomeKeyPath-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeKeyPath-prefix.pch"; sourceTree = "<group>"; };
+		E003F53AC748EDB1597EEE927C8B447C /* KPClosure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPClosure.swift; path = AwesomeKeyPath/Classes/KPKit/KPClosure.swift; sourceTree = "<group>"; };
 		E7086EB8E45C1781DAE86F0BCEF00B1D /* Pods-AwesomeKeyPath_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AwesomeKeyPath_Example.modulemap"; sourceTree = "<group>"; };
 		E9F1F412163D07356F698161ED630551 /* Pods-AwesomeKeyPath_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeKeyPath_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		EE186BE0C75C970DE28D64C8C331EB73 /* Pods-AwesomeKeyPath_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AwesomeKeyPath_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F1C930ADDB0A09572E023D9C06BD03BA /* Pods_AwesomeKeyPath_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeKeyPath_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C930ADDB0A09572E023D9C06BD03BA /* Pods_AwesomeKeyPath_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AwesomeKeyPath_Example.framework; path = "Pods-AwesomeKeyPath_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A491D8AC175BC5A2808B98C1C292EC /* Pods-AwesomeKeyPath_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeKeyPath_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F4C0EDEA043B605CCBE04B518DF092A5 /* Pods-AwesomeKeyPath_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeKeyPath_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F6E5A0F5D2EB4645654688122B7B0764 /* KPDataBindingViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KPDataBindingViewModel.swift; path = AwesomeKeyPath/Classes/KPDataBinding/KPDataBindingViewModel.swift; sourceTree = "<group>"; };
 		FE8D91149AAA23CD73F1B1872A61C1DB /* Pods-AwesomeKeyPath_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AwesomeKeyPath_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		34089D4E65B366FD7BF5D745CFF567CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD67BA36763D043E47E1ACC0FFD94F9E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84413B3C963396F8F829F608FB52043F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,34 +127,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C86B8368F2A81E967FE76CE04DE4E882 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A8E70D8B01C1EF0D3D19F8A044F8A706 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18F9B025A8C45F8ABE1862CDDE7F0C05 /* Validation */ = {
+		0FDBF691D077DD3C46130C45EF9B1D0A /* TwoWay */ = {
 			isa = PBXGroup;
 			children = (
-				87F1B8AF50B4D65D2AFBF903E7DA8594 /* KPValidation.swift */,
-				48C673A90BE077AB3A8FAF1A87C2CE80 /* KPValidationEx.swift */,
-			);
-			name = Validation;
-			sourceTree = "<group>";
-		};
-		39D58C49A8C1AAF53D45F7E544ABAD1C /* TwoWay */ = {
-			isa = PBXGroup;
-			children = (
-				81F938FDEBE9DB2FCB043C1A23105A58 /* KPTwoWayBinding.swift */,
-				1079F782789C2AAB6A99790A1C46E974 /* KPTwoWayView.swift */,
+				5EFDE171E304D2554862A22E528B0AD9 /* KPTwoWayBinding.swift */,
+				2F7CCC7DEFB602BAEDF1CE7182379984 /* KPTwoWayView.swift */,
 			);
 			name = TwoWay;
 			path = AwesomeKeyPath/Classes/KPDataBinding/TwoWay;
+			sourceTree = "<group>";
+		};
+		3C3A53A4BDD0AA1CF8D3F1BD90CC110E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D259587AF0836D60C05D61EEA4CA6E5F /* AwesomeKeyPath.modulemap */,
+				3E9C3455FD5B330DB48CF6AF91A23738 /* AwesomeKeyPath-dummy.m */,
+				7BFA0E69E86AA1FA5F1F9C27FF814179 /* AwesomeKeyPath-Info.plist */,
+				DED6C0210D23837549F178A3B09FA56C /* AwesomeKeyPath-prefix.pch */,
+				8E2F064F217CCA71BE75E7A14FAB01C7 /* AwesomeKeyPath-umbrella.h */,
+				6EC4783BDFFAE4ED620FCD1D484B8B37 /* AwesomeKeyPath.debug.xcconfig */,
+				84D4BFEDCB588D36E2DD1AA61210DFCF /* AwesomeKeyPath.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AwesomeKeyPath";
 			sourceTree = "<group>";
 		};
 		502634D45419D71554507C355CF8ECA7 /* Targets Support Files */ = {
@@ -162,6 +162,37 @@
 				6B6B3F66756BC336465B3A71C70B18EA /* Pods-AwesomeKeyPath_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5BCC000536573D86F6900A134AC9D174 /* AwesomeKeyPath */ = {
+			isa = PBXGroup;
+			children = (
+				9D0E8C199907FC247DA4B290158E0702 /* KPBinding.swift */,
+				F6E5A0F5D2EB4645654688122B7B0764 /* KPDataBindingViewModel.swift */,
+				5D852D9FA9162991F1B820FACD4B9E8A /* KPLog.swift */,
+				67E23B0FE83A421681865C8FC369C243 /* Kit */,
+				90FABB9328E35C5B3136E008C9C92323 /* OneWay */,
+				855F472BDCFFDE8678023B4F96E46A67 /* Pod */,
+				3C3A53A4BDD0AA1CF8D3F1BD90CC110E /* Support Files */,
+				0FDBF691D077DD3C46130C45EF9B1D0A /* TwoWay */,
+				A335795A1D7F835FF302507D6CF08C7E /* Validation */,
+			);
+			name = AwesomeKeyPath;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		67E23B0FE83A421681865C8FC369C243 /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+				E003F53AC748EDB1597EEE927C8B447C /* KPClosure.swift */,
+				5432C4D1D0691EB7D2508FFD0BD69F4C /* KPCollection.swift */,
+				A900A687B3E08FC068A4FD910E6F9867 /* KPInfixOperatorAddition.swift */,
+				DCC1A8EE468EF1123ACB2AD398918C0A /* KPInfixOperatorAssignment.swift */,
+				5DB4AD6CC75D99E0A694CE0A383A1CA7 /* KPInfixOperatorComparison.swift */,
+				28EE2E88E4975CEEB6FF8B7E51340864 /* KPInfixOperatorLogical.swift */,
+				64A591AC426ED7D9ECA0EB310EDBE872 /* KPPrefixOperators.swift */,
+			);
+			name = Kit;
 			sourceTree = "<group>";
 		};
 		6B6B3F66756BC336465B3A71C70B18EA /* Pods-AwesomeKeyPath_Tests */ = {
@@ -183,7 +214,7 @@
 		7D0F31518341EEAC80D79DF9948B136B /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A1AB68AA68AA8C1A8CDC2B0AE87769A2 /* AwesomeKeyPath */,
+				5BCC000536573D86F6900A134AC9D174 /* AwesomeKeyPath */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -198,29 +229,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		83C7EAD6E359F3443701711AEC4D6228 /* Kit */ = {
+		855F472BDCFFDE8678023B4F96E46A67 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				7364513C5441293A0352B234F0B88540 /* KPClosure.swift */,
-				822BD0EB1F0C394737F0D1FB41836B2D /* KPCollection.swift */,
-				DC014983BEA559B8BE81EE83BC64E6DB /* KPPrefixOperators.swift */,
-				B59DC45524CB99A9001FC201 /* KPInfixOperatorAddition.swift */,
-				B59DC45724CBA334001FC201 /* KPInfixOperatorMultiplication.swift */,
-				B59DC45924CBD71D001FC201 /* KPInfixOperatorRangeFormation.swift */,
-				B59DC45B24CBD900001FC201 /* KPInfixOperatorNilCoalescing.swift */,
-				B59DC45D24CC146E001FC201 /* KPInfixOperatorComparison.swift */,
-				B59DC45F24CC194D001FC201 /* KPInfixOperatorLogical.swift */,
-				B59DC46124CC1BDB001FC201 /* KPInfixOperatorAssignment.swift */,
-			);
-			name = Kit;
-			sourceTree = "<group>";
-		};
-		889C559259C4A4DED1E81BE7D2CEA102 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				714E6E0FA352EEE0C9F65FE3C6603F02 /* AwesomeKeyPath.podspec */,
-				988FC03075B2DE013CE96723EA06EAFC /* LICENSE */,
-				1641228EC48EA20E183BD83E8B846C78 /* README.md */,
+				76B3FCFB79138C1B449DE1EB3D7E5249 /* AwesomeKeyPath.podspec */,
+				9FC6F5CFD69EA2DD0125DF14ABF47184 /* LICENSE */,
+				B405E7B7957193E8B86F58E959917D94 /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -242,36 +256,23 @@
 			path = "Target Support Files/Pods-AwesomeKeyPath_Example";
 			sourceTree = "<group>";
 		};
-		921440D8CA1433FAF690E4E63484F32D /* Support Files */ = {
+		90FABB9328E35C5B3136E008C9C92323 /* OneWay */ = {
 			isa = PBXGroup;
 			children = (
-				2EC3DD0132F14F0EB500DC562DF61754 /* AwesomeKeyPath.modulemap */,
-				77BFFE811DE8F417679CE231404B872B /* AwesomeKeyPath-dummy.m */,
-				C9779D5360661B6058C111AA295D2092 /* AwesomeKeyPath-Info.plist */,
-				B472B9129D7D61789C6DF60511E2031A /* AwesomeKeyPath-prefix.pch */,
-				8966D88EF5B2C90D411D53F1C03D7472 /* AwesomeKeyPath-umbrella.h */,
-				7644DC713B0FE59D9600ADF4DBAE47CD /* AwesomeKeyPath.debug.xcconfig */,
-				7168029A2BBB879D3435BB04AEDAFEC9 /* AwesomeKeyPath.release.xcconfig */,
+				00A74F459085FA82723A0DAB22DF2E6C /* KPOneWayBinding.swift */,
+				303BA8A25C650099843EE99FE804E245 /* KPOneWayView.swift */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/AwesomeKeyPath";
+			name = OneWay;
+			path = AwesomeKeyPath/Classes/KPDataBinding/OneWay;
 			sourceTree = "<group>";
 		};
-		A1AB68AA68AA8C1A8CDC2B0AE87769A2 /* AwesomeKeyPath */ = {
+		A335795A1D7F835FF302507D6CF08C7E /* Validation */ = {
 			isa = PBXGroup;
 			children = (
-				12D4EA90BCC58BC5E449C72D6EAD9CDF /* KPBinding.swift */,
-				5DE0DFCDB2CBC664CC27FAE214DFD453 /* KPDataBindingViewModel.swift */,
-				B4D52F73A4CF1659A87A5B5BD9FD590F /* KPLog.swift */,
-				83C7EAD6E359F3443701711AEC4D6228 /* Kit */,
-				CE08E7CEA6AF1074065571D4111D8067 /* OneWay */,
-				889C559259C4A4DED1E81BE7D2CEA102 /* Pod */,
-				921440D8CA1433FAF690E4E63484F32D /* Support Files */,
-				39D58C49A8C1AAF53D45F7E544ABAD1C /* TwoWay */,
-				18F9B025A8C45F8ABE1862CDDE7F0C05 /* Validation */,
+				65B280A584551B62348C4EC2FF45718D /* KPValidation.swift */,
+				BB01A4E723AF988B755723D47B5C1C51 /* KPValidationEx.swift */,
 			);
-			name = AwesomeKeyPath;
-			path = ../..;
+			name = Validation;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -280,16 +281,6 @@
 				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		CE08E7CEA6AF1074065571D4111D8067 /* OneWay */ = {
-			isa = PBXGroup;
-			children = (
-				5D323269F8D6A463F44D03C2B75EE5F6 /* KPOneWayBinding.swift */,
-				5E9EBA7FD9258A34AEB6D81F329950A2 /* KPOneWayView.swift */,
-			);
-			name = OneWay;
-			path = AwesomeKeyPath/Classes/KPDataBinding/OneWay;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -322,11 +313,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7BEA84C8115C846D7BE24673450AC183 /* Headers */ = {
+		556ECD5D9DBFCD0B20523541C13EA1B0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				961A029E8E56F4746BAD3D30A4A032C8 /* AwesomeKeyPath-umbrella.h in Headers */,
+				8532B6D778CD931C0CD91F3C02C2CEFD /* AwesomeKeyPath-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,12 +353,12 @@
 		};
 		D97DC24A3642B06BB7368DF79CE5A95E /* AwesomeKeyPath */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE6034D87542AF2E462AAEF73E02760E /* Build configuration list for PBXNativeTarget "AwesomeKeyPath" */;
+			buildConfigurationList = ACCB71789121CFF40D33D24EE2B7AC54 /* Build configuration list for PBXNativeTarget "AwesomeKeyPath" */;
 			buildPhases = (
-				7BEA84C8115C846D7BE24673450AC183 /* Headers */,
-				859ACB96F3DC424E5F82889FB79ED6E1 /* Sources */,
-				C86B8368F2A81E967FE76CE04DE4E882 /* Frameworks */,
-				A4A8F579E862D06C4B9DC790E8FDE428 /* Resources */,
+				556ECD5D9DBFCD0B20523541C13EA1B0 /* Headers */,
+				08878CD200EC94A946B438361578A69D /* Sources */,
+				34089D4E65B366FD7BF5D745CFF567CF /* Frameworks */,
+				10FEAC2626A2C1EEDF39E1BFC00BCFBA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -427,6 +418,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		10FEAC2626A2C1EEDF39E1BFC00BCFBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		779BB1847979485084F271D456166798 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -441,16 +439,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4A8F579E862D06C4B9DC790E8FDE428 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		08878CD200EC94A946B438361578A69D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6534C0E8E8F15BCDC8469FAEF7E0D97 /* AwesomeKeyPath-dummy.m in Sources */,
+				212CA3164368A174AB15FC700343E52E /* KPBinding.swift in Sources */,
+				9C8F10303891A020474C546D854FE418 /* KPClosure.swift in Sources */,
+				795FE4BF6AA5879891B0C3582F18502F /* KPCollection.swift in Sources */,
+				F380032FED5A0C624EEFF5A3EA178D42 /* KPDataBindingViewModel.swift in Sources */,
+				5FC89E05453F380BF691D905D1A8DBC9 /* KPInfixOperatorAddition.swift in Sources */,
+				B29A71714071632564F73E9B21BBBF71 /* KPInfixOperatorAssignment.swift in Sources */,
+				5A3EA5254AD6C9471D1631BF5CC250E1 /* KPInfixOperatorComparison.swift in Sources */,
+				37D54F6BC3D264ED93A81FFA5BFF4ED6 /* KPInfixOperatorLogical.swift in Sources */,
+				FEBD3B7320C5D17EE14AD2A95274BA02 /* KPLog.swift in Sources */,
+				9F06F18682847F87CFE4C2D4757C5B23 /* KPOneWayBinding.swift in Sources */,
+				B1C3DF800691727623915A1297FAC7D2 /* KPOneWayView.swift in Sources */,
+				FF25026771C8FF38058132B5BFA9AC76 /* KPPrefixOperators.swift in Sources */,
+				903817E5AD2271A0481725D30AB35B11 /* KPTwoWayBinding.swift in Sources */,
+				D4C7129E5CA2438BB211A7B10CE45A97 /* KPTwoWayView.swift in Sources */,
+				455E6E15170B513B778A18ED987D5655 /* KPValidation.swift in Sources */,
+				A6484838C7AF65D366134BD216A43567 /* KPValidationEx.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		15F097877D2B8D235DD7AF3C488AC00A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -464,33 +479,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				652B5B08AF5241193C708B635C66121C /* Pods-AwesomeKeyPath_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		859ACB96F3DC424E5F82889FB79ED6E1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B9D534ECCFB782B88B487CE2DD61CA00 /* AwesomeKeyPath-dummy.m in Sources */,
-				ABDFC15386BAC6C55CA24B238072038C /* KPBinding.swift in Sources */,
-				72C3901AC4B8F810F89D3EADA12D3B88 /* KPClosure.swift in Sources */,
-				9607F2539E0A7C0B815B28C88D8F75A6 /* KPCollection.swift in Sources */,
-				B59DC45A24CBD71D001FC201 /* KPInfixOperatorRangeFormation.swift in Sources */,
-				C18440187B99B8ADE7BB46CB9D6F6233 /* KPDataBindingViewModel.swift in Sources */,
-				B59DC46224CC1BDB001FC201 /* KPInfixOperatorAssignment.swift in Sources */,
-				36E3666FA64FC2A397C115039DD74BB1 /* KPLog.swift in Sources */,
-				9EE800E31B8709007767C8D7731FD5CF /* KPOneWayBinding.swift in Sources */,
-				B59DC45824CBA334001FC201 /* KPInfixOperatorMultiplication.swift in Sources */,
-				1CB1A40298376A1D63417CD3FE740D06 /* KPOneWayView.swift in Sources */,
-				F8738428B0721D83EB99EC850953597D /* KPPrefixOperators.swift in Sources */,
-				6226E46F895538E84B4ECFB472F994CB /* KPTwoWayBinding.swift in Sources */,
-				222851B170AD6F36982B5C54D64790C9 /* KPTwoWayView.swift in Sources */,
-				B59DC45E24CC146E001FC201 /* KPInfixOperatorComparison.swift in Sources */,
-				B59DC45624CB99A9001FC201 /* KPInfixOperatorAddition.swift in Sources */,
-				B59DC46024CC194D001FC201 /* KPInfixOperatorLogical.swift in Sources */,
-				B59DC45C24CBD900001FC201 /* KPInfixOperatorNilCoalescing.swift in Sources */,
-				59F18BAB2DDFD2C7C1FFCF13C9382781 /* KPValidation.swift in Sources */,
-				22A23AE2EC2724A260F9896658159DFC /* KPValidationEx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,9 +535,9 @@
 			};
 			name = Debug;
 		};
-		22421E4ADFC205C6C9F3BE0D82F0CD28 /* Debug */ = {
+		1CA5572A589A2E1BA3D5542536232778 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7644DC713B0FE59D9600ADF4DBAE47CD /* AwesomeKeyPath.debug.xcconfig */;
+			baseConfigurationReference = 84D4BFEDCB588D36E2DD1AA61210DFCF /* AwesomeKeyPath.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
@@ -574,10 +562,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		257497152829C177993B5EC99C1D227A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -632,7 +621,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -709,9 +699,9 @@
 			};
 			name = Release;
 		};
-		CFFBF34D3BC1AE659DC8301C76FDA1A0 /* Release */ = {
+		BA4C11234E71A2C439A2631DE0A2817F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7168029A2BBB879D3435BB04AEDAFEC9 /* AwesomeKeyPath.release.xcconfig */;
+			baseConfigurationReference = 6EC4783BDFFAE4ED620FCD1D484B8B37 /* AwesomeKeyPath.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
@@ -736,11 +726,10 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -872,11 +861,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE6034D87542AF2E462AAEF73E02760E /* Build configuration list for PBXNativeTarget "AwesomeKeyPath" */ = {
+		ACCB71789121CFF40D33D24EE2B7AC54 /* Build configuration list for PBXNativeTarget "AwesomeKeyPath" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				22421E4ADFC205C6C9F3BE0D82F0CD28 /* Debug */,
-				CFFBF34D3BC1AE659DC8301C76FDA1A0 /* Release */,
+				BA4C11234E71A2C439A2631DE0A2817F /* Debug */,
+				1CA5572A589A2E1BA3D5542536232778 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
