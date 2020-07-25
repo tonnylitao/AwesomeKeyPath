@@ -26,12 +26,8 @@
       "source_files": "AwesomeKeyPath/Classes/KPValidation/*"
     },
     {
-      "name": "Closure",
-      "source_files": "AwesomeKeyPath/Classes/KPClosure/*"
-    },
-    {
-      "name": "Collection",
-      "source_files": "AwesomeKeyPath/Classes/KPCollection/*"
+      "name": "Kit",
+      "source_files": "AwesomeKeyPath/Classes/KPKit/*"
     }
   ],
   "swift_version": "5"
