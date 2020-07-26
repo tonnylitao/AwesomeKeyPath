@@ -12,19 +12,22 @@ import Foundation
 public protocol KPValidation {}
 
 extension KPValidation {
-    
-    public func validate(_ rules: KeyPath<Self, Bool>...) -> Bool {
+
+    public func validate(_ rules: ((Self) -> Bool)...) -> Bool {
         
-        for rule in rules where self[keyPath: rule] == false {
+        for rule in rules where rule(self) == false {
             return false
         }
         
         return true
     }
     
-    public func validate(_ rules: ((Self) -> Bool)...) -> Bool {
+    /*
+     This method existed only for xcode to save time from type-check in compile
+     */
+    public func validate(_ rules: KeyPath<Self, Bool>...) -> Bool {
         
-        for rule in rules where rule(self) == false {
+        for rule in rules where self[keyPath: rule] == false {
             return false
         }
         

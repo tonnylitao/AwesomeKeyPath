@@ -29,7 +29,13 @@ extension KeyPath {
     */
     public func closure<NewValue>(_ closure: @escaping (Value) -> NewValue) -> (Root) -> NewValue {
         {
-            closure( $0[keyPath: self] )
+            closure($0[keyPath: self])
+        }
+    }
+    
+    public func closure2<NewValue, Other>(_ closure: @escaping (Value, Other) -> NewValue) -> (Root, Other) -> NewValue {
+        {
+            closure($0[keyPath: self], $1)
         }
     }
 }

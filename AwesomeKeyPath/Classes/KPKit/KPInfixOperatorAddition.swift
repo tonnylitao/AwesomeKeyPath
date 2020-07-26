@@ -33,6 +33,10 @@ extension KeyPath where Value: AdditiveArithmetic {
     }
 }
 
+public func + <Root, Value: AdditiveArithmetic> (_ lhs: @escaping (Root) -> Value, _ rhs: @escaping (Root) -> Value) -> (Root) -> (Value) {
+    { lhs($0) + rhs($0) }
+}
+
 extension AdditiveArithmetic {
 
     public static func + <Root>(_ lhs: @escaping (Root) -> Self, _ rhs: Self) -> (Root) -> Self {
@@ -66,6 +70,10 @@ extension KeyPath where Value: AdditiveArithmetic {
     public static func - (_ lhs: @escaping (Root) -> Value, _ rhs: KeyPath) -> (Root) -> (Value) {
         { lhs($0) - $0[keyPath: rhs] }
     }
+}
+
+public func - <Root, Value: AdditiveArithmetic> (_ lhs: @escaping (Root) -> Value, _ rhs: @escaping (Root) -> Value) -> (Root) -> (Value) {
+    { lhs($0) - rhs($0) }
 }
 
 extension AdditiveArithmetic {
