@@ -1,9 +1,9 @@
 PODS:
-  - AwesomeKeyPath (0.4.1):
-    - AwesomeKeyPath/Kit (= 0.4.1)
-    - AwesomeKeyPath/Validation (= 0.4.1)
-  - AwesomeKeyPath/Kit (0.4.1)
-  - AwesomeKeyPath/Validation (0.4.1)
+  - AwesomeKeyPath (0.4.2):
+    - AwesomeKeyPath/Kit (= 0.4.2)
+    - AwesomeKeyPath/Validation (= 0.4.2)
+  - AwesomeKeyPath/Kit (0.4.2)
+  - AwesomeKeyPath/Validation (0.4.2)
 
 DEPENDENCIES:
   - AwesomeKeyPath (from `../`)
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AwesomeKeyPath: ac8461f3e9e442cd4c846abd5ce8cbf18550c91b
+  AwesomeKeyPath: 86c7b6fd4fd032c9947ed788b2baa1a0a21ec5fd
 
 PODFILE CHECKSUM: a92c8a67c77383a0e429de1f6763df08792d35f5
 
