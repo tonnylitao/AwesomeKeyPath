@@ -104,6 +104,8 @@ extension KPDataBindingViewModel {
             fatalError("KPDataBindingViewModel.update(_, with:) only run on main thread")
         }
         
+        model[keyPath: keyPath] = value
+        
         let bindings = _bindings.filter({ $0.modelKeyPath == keyPath })
         bindings.forEach { $0.updateModelAndView(&model, value) }
         
