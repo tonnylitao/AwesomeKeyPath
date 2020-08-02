@@ -83,11 +83,28 @@ public class KPOneWayBinding<Model>: KPBinding<Model> {
 infix operator <-
 
 public extension KPSelfOneWayView {
+    
+    /*
+     let bindings = [
+        uiLabel     <- \User.aString,
+        uiTextField <- \User.aString,
+        uiButton    <- \User.aBool,
+     ]
+     */
+    
     static func <- <Model>(view: Self, mKeyPath: WritableKeyPath<Model, Self.Value>) -> KPBinding<Model> {
         KPOneWayBinding(view, Self.keyPath, mKeyPath)
     }
 }
 
+/*
+let bindings = [
+   uiLabel     <~ (\User.aInt, { $0.text = "text is \($1)" }),
+   uiTextField <~ (\User.aInt, { $0.text = "\($1)" }),
+   uiButton    <~ (\User.aInt, { $0.isSelected = $1 > 0 }),
+   uiButton    <~ (\User.aString, { $0.setTitle($1, for: .normal) }),
+]
+*/
 
 infix operator <~
 
