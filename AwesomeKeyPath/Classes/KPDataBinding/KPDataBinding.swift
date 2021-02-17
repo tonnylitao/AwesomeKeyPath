@@ -24,7 +24,9 @@ public class KPDataBinding<Model> {
         }
     }
     
-    public init() {}
+    public init(_ model: Model? = nil) {
+        self.model = model
+    }
     
     @objc private func viewChanged(control: UIControl) {
         (control as? KPTwoWayEventReceiver)?.handleEvent()

@@ -12,11 +12,10 @@ import AwesomeKeyPath
 
 class OneWayOperatorTests: XCTestCase {
     
-    var viewModel: KPDataBinding<User>!
+    var binding: KPDataBinding<User>!
 
     override func setUpWithError() throws {
-        viewModel = KPDataBinding<User>()
-        viewModel.model = User()
+        binding = KPDataBinding(User())
     }
 
     override func tearDownWithError() throws {}
@@ -26,19 +25,19 @@ class OneWayOperatorTests: XCTestCase {
         let field = UITextField()
         let btn = UIButton()
         
-        viewModel.oneWayBind(\.name, lbl)
+        binding.oneWayBind(\.name, lbl)
             .oneWayBind(\.email, field)
             .oneWayBind(\.likeKiwi, btn)
         
-        XCTAssertNotNil(viewModel.model)
+        XCTAssertNotNil(binding.model)
         
-        XCTAssertNil(viewModel.model.name)
+        XCTAssertNil(binding.model.name)
         XCTAssertNil(lbl.text)
         
-        XCTAssertNil(viewModel.model.email)
+        XCTAssertNil(binding.model.email)
         XCTAssertEqual(field.text, UITextField().text)
         
-        XCTAssertFalse(viewModel.model.likeKiwi)
+        XCTAssertFalse(binding.model.likeKiwi)
         XCTAssertFalse(btn.isSelected)
     }
     
@@ -47,38 +46,38 @@ class OneWayOperatorTests: XCTestCase {
         let field = UITextField()
         
         
-        viewModel.model = User.random
-        viewModel.oneWayBind(\.name, lbl)
+        binding.oneWayBind(\.name, lbl)
             .oneWayBind(\.email, field)
+        binding.model = .random
         
-        XCTAssertEqual(lbl.text, viewModel.model.name)
-        XCTAssertEqual(field.text, viewModel.model.email)
+        XCTAssertEqual(lbl.text, binding.model.name)
+        XCTAssertEqual(field.text, binding.model.email)
     }
     
     func testUpdate() throws {
         let lbl = UILabel()
         let field = UITextField()
         
-        viewModel.oneWayBind(\.name, lbl)
+        binding.oneWayBind(\.name, lbl)
             .oneWayBind(\.email, field)
         
         let text = String.random
         
-        viewModel.update(\.name, with: text)
-        XCTAssertEqual(viewModel.model.name, text)
+        binding.update(\.name, with: text)
+        XCTAssertEqual(binding.model.name, text)
         XCTAssertEqual(lbl.text, text)
         
-        viewModel.update(\.name, with: nil)
-        XCTAssertNil(viewModel.model.name)
+        binding.update(\.name, with: nil)
+        XCTAssertNil(binding.model.name)
         XCTAssertNil(lbl.text)
         
         //
-        viewModel.update(\.email, with: text)
-        XCTAssertEqual(viewModel.model.email, text)
+        binding.update(\.email, with: text)
+        XCTAssertEqual(binding.model.email, text)
         XCTAssertEqual(field.text, text)
         
-        viewModel.update(\.email, with: nil)
-        XCTAssertNil(viewModel.model.email)
+        binding.update(\.email, with: nil)
+        XCTAssertNil(binding.model.email)
         XCTAssertEqual(field.text, UITextField().text)
     }
     
@@ -86,11 +85,11 @@ class OneWayOperatorTests: XCTestCase {
         let lbl1 = UILabel()
         let lbl2 = UILabel()
         
-        viewModel.bind(\.name => lbl1)
+        binding.bind(\.name => lbl1)
             .bind(\.name => lbl2)
         
-        viewModel.unbind(\.name)
-        XCTAssertFalse(viewModel.update(\.name, with: String.random))
+        binding.unbind(\.name)
+        XCTAssertFalse(binding.update(\.name, with: String.random))
     }
     
     func testOneFieldToManyView() throws {
@@ -98,25 +97,25 @@ class OneWayOperatorTests: XCTestCase {
         let view2 = UILabel()
         let view3 = UITextField()
         
-        viewModel.bind(\.name => view1)
+        binding.bind(\.name => view1)
             .bind(\.name => view2)
             .bind(\.name => view3)
-        viewModel.model = User.random
+        binding.model = .random
         
         
-        XCTAssertEqual(view1.text, viewModel.model.name)
-        XCTAssertEqual(view2.text, viewModel.model.name)
-        XCTAssertEqual(view3.text, viewModel.model.name)
+        XCTAssertEqual(view1.text, binding.model.name)
+        XCTAssertEqual(view2.text, binding.model.name)
+        XCTAssertEqual(view3.text, binding.model.name)
         
         let text = String.random
-        viewModel.update(\.name, with: text)
-        XCTAssertEqual(viewModel.model.name, text)
+        binding.update(\.name, with: text)
+        XCTAssertEqual(binding.model.name, text)
         XCTAssertEqual(view1.text, text)
         XCTAssertEqual(view2.text, text)
         XCTAssertEqual(view3.text, text)
         
-        viewModel.update(\.name, with: nil)
-        XCTAssertNil(viewModel.model.name)
+        binding.update(\.name, with: nil)
+        XCTAssertNil(binding.model.name)
         XCTAssertNil(view1.text)
         XCTAssertNil(view2.text)
         XCTAssertEqual(view3.text, UITextField().text)
@@ -125,20 +124,20 @@ class OneWayOperatorTests: XCTestCase {
     func testManyFieldToOneView() throws {
         let lbl = UILabel()
         
-        viewModel.bind(\.name => lbl)
+        binding.bind(\.name => lbl)
             .bind(\.email => lbl)
             .bind(\.groupName => lbl)
-        viewModel.model = User.random
+        binding.model = .random
         
-        XCTAssertEqual(lbl.text, viewModel.model.groupName)
+        XCTAssertEqual(lbl.text, binding.model.groupName)
         
-        viewModel.update(\.name, with: String.random)
-        XCTAssertEqual(lbl.text, viewModel.model.name)
+        binding.update(\.name, with: String.random)
+        XCTAssertEqual(lbl.text, binding.model.name)
         
-        viewModel.update(\.email, with: String.random)
-        XCTAssertEqual(lbl.text, viewModel.model.email)
+        binding.update(\.email, with: String.random)
+        XCTAssertEqual(lbl.text, binding.model.email)
         
-        viewModel.update(\.groupName, with: String.random)
-        XCTAssertEqual(lbl.text, viewModel.model.groupName)
+        binding.update(\.groupName, with: String.random)
+        XCTAssertEqual(lbl.text, binding.model.groupName)
     }
 }

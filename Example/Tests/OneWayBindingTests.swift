@@ -12,10 +12,10 @@ import AwesomeKeyPath
 
 class OneWayBindingTests: XCTestCase {
     
-    var viewModel: KPDataBinding<User>!
+    var binding: KPDataBinding<User>!
 
     override func setUpWithError() throws {
-        viewModel = KPDataBinding<User>()
+        binding = KPDataBinding(User())
     }
 
     override func tearDownWithError() throws {}
@@ -28,21 +28,20 @@ class OneWayBindingTests: XCTestCase {
         let btn = UIButton()
         
         // Action
-        viewModel.model = User()
-        viewModel.bind(KPOneWayBinding(\.name, lbl, \.text))
-        viewModel.bind(KPOneWayBinding(\.email, field, \.text))
-        viewModel.bind(KPOneWayBinding(\.likeKiwi, btn, \.isSelected))
+        binding.bind(KPOneWayBinding(\.name, lbl, \.text))
+        binding.bind(KPOneWayBinding(\.email, field, \.text))
+        binding.bind(KPOneWayBinding(\.likeKiwi, btn, \.isSelected))
         
         // Assert
-        XCTAssertNotNil(viewModel.model)
+        XCTAssertNotNil(binding.model)
 
-        XCTAssertNil(viewModel.model.name)
+        XCTAssertNil(binding.model.name)
         XCTAssertNil(lbl.text)
 
-        XCTAssertNil(viewModel.model.email)
+        XCTAssertNil(binding.model.email)
         XCTAssertEqual(field.text, UITextField().text)
 
-        XCTAssertFalse(viewModel.model.likeKiwi)
+        XCTAssertFalse(binding.model.likeKiwi)
         XCTAssertFalse(btn.isSelected)
     }
     
@@ -52,13 +51,13 @@ class OneWayBindingTests: XCTestCase {
         let field = UITextField()
         
         // Action
-        viewModel.model = User.random
-        viewModel.bind(KPOneWayBinding(\.name, lbl, \.text))
-        viewModel.bind(KPOneWayBinding(\.email, field, \.text))
-
+        binding.bind(KPOneWayBinding(\.name, lbl, \.text))
+        binding.bind(KPOneWayBinding(\.email, field, \.text))
+        binding.model = .random
+        
         // Assert
-        XCTAssertEqual(lbl.text, viewModel.model.name)
-        XCTAssertEqual(field.text, viewModel.model.email)
+        XCTAssertEqual(lbl.text, binding.model.name)
+        XCTAssertEqual(field.text, binding.model.email)
     }
     
     func testUpdate() throws {
@@ -67,31 +66,30 @@ class OneWayBindingTests: XCTestCase {
         let field = UITextField()
         
         // Action
-        viewModel.model = User()
-        viewModel.bind(KPOneWayBinding(\.name, lbl, \.text))
-        viewModel.bind(KPOneWayBinding(\.email, field, \.text))
+        binding.bind(KPOneWayBinding(\.name, lbl, \.text))
+        binding.bind(KPOneWayBinding(\.email, field, \.text))
 
         let text = String.random
 
-        viewModel.update(\.name, with: text)
+        binding.update(\.name, with: text)
 
         // Assert
-        XCTAssertEqual(viewModel.model.name, text)
+        XCTAssertEqual(binding.model.name, text)
         XCTAssertEqual(lbl.text, text)
 
         // Action & Assert
-        viewModel.update(\.name, with: nil)
-        XCTAssertNil(viewModel.model.name)
+        binding.update(\.name, with: nil)
+        XCTAssertNil(binding.model.name)
         XCTAssertNil(lbl.text)
 
         // Action & Assert
-        viewModel.update(\.email, with: text)
-        XCTAssertEqual(viewModel.model.email, text)
+        binding.update(\.email, with: text)
+        XCTAssertEqual(binding.model.email, text)
         XCTAssertEqual(field.text, text)
 
         // Action & Assert
-        viewModel.update(\.email, with: nil)
-        XCTAssertNil(viewModel.model.email)
+        binding.update(\.email, with: nil)
+        XCTAssertNil(binding.model.email)
         XCTAssertEqual(field.text, UITextField().text)
     }
     
@@ -100,12 +98,11 @@ class OneWayBindingTests: XCTestCase {
         let lbl = UILabel()
         
         // Action
-        viewModel.model = User()
-        viewModel.bind( \.name => lbl )
-        viewModel.unbind(\.name)
+        binding.bind( \.name => lbl )
+        binding.unbind(\.name)
         
         // Assert
-        XCTAssertFalse(viewModel.update(\.name, with: String.random))
+        XCTAssertFalse(binding.update(\.name, with: String.random))
     }
     
     func testOneFieldToManyView() throws {
@@ -115,33 +112,33 @@ class OneWayBindingTests: XCTestCase {
         let view3 = UITextField()
         
         // Action
-        viewModel.model = User.random
-        viewModel.bind([
+        binding.bind([
             KPOneWayBinding(\.name, view1, \.text),
             KPOneWayBinding(\.name, view2, \.text),
             KPOneWayBinding(\.name, view3, \.text)
         ])
+        binding.model = .random
         
         // Assert
-        XCTAssertEqual(view1.text, viewModel.model.name)
-        XCTAssertEqual(view2.text, viewModel.model.name)
-        XCTAssertEqual(view3.text, viewModel.model.name)
+        XCTAssertEqual(view1.text, binding.model.name)
+        XCTAssertEqual(view2.text, binding.model.name)
+        XCTAssertEqual(view3.text, binding.model.name)
         
         // Action
         let text = String.random
-        viewModel.update(\.name, with: text)
+        binding.update(\.name, with: text)
         
         // Assert
-        XCTAssertEqual(viewModel.model.name, text)
+        XCTAssertEqual(binding.model.name, text)
         XCTAssertEqual(view1.text, text)
         XCTAssertEqual(view2.text, text)
         XCTAssertEqual(view3.text, text)
         
         // Action
-        viewModel.update(\.name, with: nil)
+        binding.update(\.name, with: nil)
         
         // Assert
-        XCTAssertNil(viewModel.model.name)
+        XCTAssertNil(binding.model.name)
         XCTAssertNil(view1.text)
         XCTAssertNil(view2.text)
         XCTAssertEqual(view3.text, UITextField().text)
@@ -152,27 +149,27 @@ class OneWayBindingTests: XCTestCase {
         let lbl = UILabel()
         
         // Action
-        viewModel.model = User.random
-        viewModel.bind( [
+        binding.bind( [
             KPOneWayBinding(\.name, lbl, \.text),
             KPOneWayBinding(\.email, lbl, \.text),
             KPOneWayBinding(\.groupName, lbl, \.text)
         ])
+        binding.model = .random
         
         // Assert
-        XCTAssertEqual(lbl.text, viewModel.model.groupName)
+        XCTAssertEqual(lbl.text, binding.model.groupName)
         
         // Action & Assert
-        viewModel.update(\.name, with: String.random)
-        XCTAssertEqual(lbl.text, viewModel.model.name)
+        binding.update(\.name, with: String.random)
+        XCTAssertEqual(lbl.text, binding.model.name)
         
         // Action & Assert
-        viewModel.update(\.email, with: String.random)
-        XCTAssertEqual(lbl.text, viewModel.model.email)
+        binding.update(\.email, with: String.random)
+        XCTAssertEqual(lbl.text, binding.model.email)
         
         // Action & Assert
-        viewModel.update(\.groupName, with: String.random)
-        XCTAssertEqual(lbl.text, viewModel.model.groupName)
+        binding.update(\.groupName, with: String.random)
+        XCTAssertEqual(lbl.text, binding.model.groupName)
     }
     
     func testOneFormat() throws {
@@ -182,25 +179,25 @@ class OneWayBindingTests: XCTestCase {
         
         // Action
         
-        viewModel.bind(
+        binding.bind(
             KPOneWayBinding(\.name, lbl, { $0.text = ($1 ?? "") + text })
         )
-        viewModel.model = User.random
+        binding.model = .random
         
         // Assert
-        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text)
+        XCTAssertEqual(lbl.text, (binding.model.name ?? "") + text)
         
         // Action
         let text1 = String.random
         
         // Action & Assert
-        viewModel.update(\.name, with: text1)
-        XCTAssertEqual(viewModel.model.name, text1)
-        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text)
+        binding.update(\.name, with: text1)
+        XCTAssertEqual(binding.model.name, text1)
+        XCTAssertEqual(lbl.text, (binding.model.name ?? "") + text)
         
         // Action & Assert
-        viewModel.update(\.name, with: nil)
-        XCTAssertNil(viewModel.model.name)
+        binding.update(\.name, with: nil)
+        XCTAssertNil(binding.model.name)
         XCTAssertEqual(lbl.text, text)
     }
     
@@ -213,26 +210,26 @@ class OneWayBindingTests: XCTestCase {
         let field = UITextField()
         
         // Action
-        viewModel.bind([
+        binding.bind([
             KPOneWayBinding(\.name, lbl, { $0.text = ($1 ?? "") + text1 }),
             KPOneWayBinding(\User.name, field, { $0.text = ($1 ?? "") + text2 })
         ])
-        viewModel.model = User.random
+        binding.model = .random
         
         // Assert
-        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text1)
-        XCTAssertEqual(field.text, (viewModel.model.name ?? "") + text2)
+        XCTAssertEqual(lbl.text, (binding.model.name ?? "") + text1)
+        XCTAssertEqual(field.text, (binding.model.name ?? "") + text2)
         
         // Action & Assert
         let text = String.random
-        viewModel.update(\.name, with: text)
-        XCTAssertEqual(viewModel.model.name, text)
-        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text1)
-        XCTAssertEqual(field.text, (viewModel.model.name ?? "") + text2)
+        binding.update(\.name, with: text)
+        XCTAssertEqual(binding.model.name, text)
+        XCTAssertEqual(lbl.text, (binding.model.name ?? "") + text1)
+        XCTAssertEqual(field.text, (binding.model.name ?? "") + text2)
         
         // Action & Assert
-        viewModel.update(\.name, with: nil)
-        XCTAssertNil(viewModel.model.name)
+        binding.update(\.name, with: nil)
+        XCTAssertNil(binding.model.name)
         XCTAssertEqual(lbl.text, text1)
         XCTAssertEqual(field.text, text2)
     }
@@ -242,23 +239,22 @@ class OneWayBindingTests: XCTestCase {
         let lbl = UILabel()
         
         // Action
-        viewModel.bind([
+        binding.bind([
             KPOneWayBinding(\.name, lbl, { $0.layer.cornerRadius = CGFloat(Float($1 ?? "0") ?? 0) })
         ])
-        viewModel.model = User()
         
         // Assert
         XCTAssertEqual(lbl.layer.cornerRadius, 0)
         
         // Action & Assert
         let random = CGFloat.random(in: 0...1000)
-        viewModel.update(\.name, with: "\(random)")
-        XCTAssertEqual(viewModel.model.name, "\(random)")
+        binding.update(\.name, with: "\(random)")
+        XCTAssertEqual(binding.model.name, "\(random)")
         XCTAssertEqual(lbl.layer.cornerRadius, CGFloat(Float("\(random)") ?? 0))
         
         // Action & Assert
-        viewModel.update(\.name, with: nil)
-        XCTAssertNil(viewModel.model.name)
+        binding.update(\.name, with: nil)
+        XCTAssertNil(binding.model.name)
         XCTAssertEqual(lbl.layer.cornerRadius, 0)
     }
 }
