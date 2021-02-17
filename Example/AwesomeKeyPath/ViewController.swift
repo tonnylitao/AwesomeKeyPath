@@ -27,48 +27,58 @@ class ViewController: UIViewController {
     @IBOutlet weak var hikingBtn:        UIButton!
     
     
-    lazy var userBinding: KPDataBinding<User> = {
-        let binding = KPDataBinding<User>()
+    lazy var userBinding: KPDataBinding<User> = KPDataBinding(User(groupName: "Save NZ Animals Group 1", name: "Tonny"))
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        //one way bind
-        binding.oneWayBind(\.groupName, groupNameLbl)
+        setupBinding()
+    }
+    
+    private func setupBinding() {
+        /*
+         One way bind
+         */
+        userBinding.oneWayBind(\.groupName, groupNameLbl)
+        
+        //same as
         //binding.bind(\.groupName => groupNameLbl)
         
-        binding.oneWayBind(\.name, travelBtn, { view, value in
+        //customised view render
+        userBinding.oneWayBind(\.name, travelBtn, { view, value in
             view.setTitle(value, for: .normal)
         })
         
-        binding.oneWayBind(\.age, ageLbl, { view, value in
+        //customised view render
+        userBinding.oneWayBind(\.age, ageLbl, { view, value in
             view.text = "Your Age: \(value)"
         })
         
         
-        //two way bind
-        binding.twoWayBind(\.name, nameField)
+        /*
+         Two way bind
+         */
+        userBinding.twoWayBind(\.name, nameField)
             .twoWayBind(\.email, emailField)
             .twoWayBind(\.activity, activitySlider)
             .twoWayBind(\.likeKiwi, likeKiwiSwitcher)
             .twoWayBind(\.travel, travelBtn)
             .twoWayBind(\.hiking, hikingBtn)
-
-//        binding.bind(\.name <=> nameField)
-//            .bind(\.email <=> emailField)
-//            .bind(\.activity <=> activitySlider)
-//            .bind(\.likeKiwi <=> likeKiwiSwitcher)
-//            .bind(\.travel <=> travelBtn)
-//            .bind(\.hiking <=> hikingBtn)
-
-        binding.twoWayBind(\.age, ageSteper, formatter: { view, modal in
+        
+        //same as
+        //        binding.bind(\.name <=> nameField)
+        //            .bind(\.email <=> emailField)
+        //            .bind(\.activity <=> activitySlider)
+        //            .bind(\.likeKiwi <=> likeKiwiSwitcher)
+        //            .bind(\.travel <=> travelBtn)
+        //            .bind(\.hiking <=> hikingBtn)
+        
+        //data formatter and customised view render
+        userBinding.twoWayBind(\.age, ageSteper, formatter: { view, modal in
             Int(view.value)
         }, render: { view, value in
             view.value = Double(value)
         })
-        
-        return binding
-    }()
-    
-    override func viewDidLoad() {
-        userBinding.model = User(groupName: "Save NZ Animals Group 1", name: "Tonny")
     }
     
     @IBAction func updateProperties(_ sender: Any) {
@@ -82,10 +92,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func submit(_ sender: Any) {
-        assertBinding()
-        
         let model = userBinding.model!
         debugPrint(model)
+        
+        assert(groupNameLbl.text == model.groupName)
+        
+        //set UITextField text nil, but still get ""
+        assert(nameField.text == model.name || (nameField.text == "" && model.name == nil))
+        assert(emailField.text == model.email || (emailField.text == "" && model.email == nil))
+        
+        assert(activitySlider.value == model.activity)
+        assert(likeKiwiSwitcher.isOn == model.likeKiwi)
+        assert(travelBtn.isSelected == model.travel)
+        assert(hikingBtn.isSelected == model.hiking)
+        
+        assert(Int(ageSteper.value) == model.age)
+        
+        
         
         guard model.validate(\.name.isSome, \.name!.isNotEmpty) else {
             nameField.becomeFirstResponder()
@@ -100,24 +123,4 @@ class ViewController: UIViewController {
         //...
     }
     
-}
-
-extension ViewController {
-    
-    func assertBinding() {
-        let data = userBinding.model!
-        
-        assert(groupNameLbl.text == data.groupName)
-        
-        //set UITextField text nil, but still get ""
-        assert(nameField.text == data.name || (nameField.text == "" && data.name == nil))
-        assert(emailField.text == data.email || (emailField.text == "" && data.email == nil))
-        
-        assert(activitySlider.value == data.activity)
-        assert(likeKiwiSwitcher.isOn == data.likeKiwi)
-        assert(travelBtn.isSelected == data.travel)
-        assert(hikingBtn.isSelected == data.hiking)
-        
-        assert(Int(ageSteper.value) == data.age)
-    }
 }

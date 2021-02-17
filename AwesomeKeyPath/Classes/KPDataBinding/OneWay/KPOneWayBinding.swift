@@ -53,9 +53,9 @@ public extension KPSelfOneWayView {
     
     /*
      let bindings = [
-     \User.aString => uiLabel,
-     \User.aString => uiTextField,
-     \User.aBool   => uiButton,
+         \User.aString => uiLabel,
+         \User.aString => uiTextField,
+         \User.aBool   => uiButton,
      ]
      */
     
