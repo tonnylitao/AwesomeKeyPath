@@ -12,10 +12,11 @@ import AwesomeKeyPath
 
 class OneWayOperatorTests: XCTestCase {
     
-    var viewModel: KPDataBindingViewModel<User>!
+    var viewModel: KPDataBinding<User>!
 
     override func setUpWithError() throws {
-        viewModel = KPDataBindingViewModel<User>()
+        viewModel = KPDataBinding<User>()
+        viewModel.model = User()
     }
 
     override func tearDownWithError() throws {}
@@ -25,11 +26,9 @@ class OneWayOperatorTests: XCTestCase {
         let field = UITextField()
         let btn = UIButton()
         
-        viewModel.bind(User(), [
-            lbl     <- \.name,
-            field   <- \.email,
-            btn     <- \.likeKiwi
-        ])
+        viewModel.oneWayBind(\.name, lbl)
+            .oneWayBind(\.email, field)
+            .oneWayBind(\.likeKiwi, btn)
         
         XCTAssertNotNil(viewModel.model)
         
@@ -47,10 +46,10 @@ class OneWayOperatorTests: XCTestCase {
         let lbl = UILabel()
         let field = UITextField()
         
-        viewModel.bind(User.random, [
-            lbl     <- \.name,
-            field   <- \.email
-        ])
+        
+        viewModel.model = User.random
+        viewModel.oneWayBind(\.name, lbl)
+            .oneWayBind(\.email, field)
         
         XCTAssertEqual(lbl.text, viewModel.model.name)
         XCTAssertEqual(field.text, viewModel.model.email)
@@ -60,10 +59,8 @@ class OneWayOperatorTests: XCTestCase {
         let lbl = UILabel()
         let field = UITextField()
         
-        viewModel.bind(User(), [
-            lbl     <- \.name,
-            field   <- \.email
-        ])
+        viewModel.oneWayBind(\.name, lbl)
+            .oneWayBind(\.email, field)
         
         let text = String.random
         
@@ -89,10 +86,8 @@ class OneWayOperatorTests: XCTestCase {
         let lbl1 = UILabel()
         let lbl2 = UILabel()
         
-        viewModel.bind(User(), [
-            lbl1     <- \.name,
-            lbl2     <- \.name
-        ])
+        viewModel.bind(\.name => lbl1)
+            .bind(\.name => lbl2)
         
         viewModel.unbind(\.name)
         XCTAssertFalse(viewModel.update(\.name, with: String.random))
@@ -103,11 +98,11 @@ class OneWayOperatorTests: XCTestCase {
         let view2 = UILabel()
         let view3 = UITextField()
         
-        viewModel.bind(User.random, [
-            view1    <- \.name,
-            view2    <- \.name,
-            view3    <- \.name
-        ])
+        viewModel.bind(\.name => view1)
+            .bind(\.name => view2)
+            .bind(\.name => view3)
+        viewModel.model = User.random
+        
         
         XCTAssertEqual(view1.text, viewModel.model.name)
         XCTAssertEqual(view2.text, viewModel.model.name)
@@ -130,11 +125,10 @@ class OneWayOperatorTests: XCTestCase {
     func testManyFieldToOneView() throws {
         let lbl = UILabel()
         
-        viewModel.bind(User.random, [
-            lbl    <- \.name,
-            lbl    <- \.email,
-            lbl    <- \.groupName
-        ])
+        viewModel.bind(\.name => lbl)
+            .bind(\.email => lbl)
+            .bind(\.groupName => lbl)
+        viewModel.model = User.random
         
         XCTAssertEqual(lbl.text, viewModel.model.groupName)
         
@@ -146,53 +140,5 @@ class OneWayOperatorTests: XCTestCase {
         
         viewModel.update(\.groupName, with: String.random)
         XCTAssertEqual(lbl.text, viewModel.model.groupName)
-    }
-    
-    func testOneFormat() throws {
-        let text = String.random
-        
-        let lbl = UILabel()
-        
-        viewModel.bind(User.random, [
-            lbl    <~ (\.name, { $0.text = ($1 ?? "") + text }),
-        ])
-        
-        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text)
-        
-        let text1 = String.random
-        viewModel.update(\.name, with: text1)
-        XCTAssertEqual(viewModel.model.name, text1)
-        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text)
-        
-        viewModel.update(\.name, with: nil)
-        XCTAssertNil(viewModel.model.name)
-        XCTAssertEqual(lbl.text, text)
-    }
-    
-    func testMultileFormat() throws {
-        let text1 = String.random
-        let text2 = String.random
-        
-        let lbl = UILabel()
-        let field = UITextField()
-        
-        viewModel.bind(User.random, [
-            lbl    <~ (\.name, { $0.text = ($1 ?? "") + text1 }),
-            field  <~ (\.name, { $0.text = ($1 ?? "") + text2 }),
-        ])
-        
-        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text1)
-        XCTAssertEqual(field.text, (viewModel.model.name ?? "") + text2)
-        
-        let text = String.random
-        viewModel.update(\.name, with: text)
-        XCTAssertEqual(viewModel.model.name, text)
-        XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text1)
-        XCTAssertEqual(field.text, (viewModel.model.name ?? "") + text2)
-        
-        viewModel.update(\.name, with: nil)
-        XCTAssertNil(viewModel.model.name)
-        XCTAssertEqual(lbl.text, text1)
-        XCTAssertEqual(field.text, text2)
     }
 }

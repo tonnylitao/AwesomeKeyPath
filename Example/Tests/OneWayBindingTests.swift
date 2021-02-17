@@ -12,10 +12,10 @@ import AwesomeKeyPath
 
 class OneWayBindingTests: XCTestCase {
     
-    var viewModel: KPDataBindingViewModel<User>!
+    var viewModel: KPDataBinding<User>!
 
     override func setUpWithError() throws {
-        viewModel = KPDataBindingViewModel<User>()
+        viewModel = KPDataBinding<User>()
     }
 
     override func tearDownWithError() throws {}
@@ -23,25 +23,25 @@ class OneWayBindingTests: XCTestCase {
     func testInitial() throws {
         // Arrange
         let lbl = UILabel()
+        lbl.tag = 1
         let field = UITextField()
         let btn = UIButton()
         
         // Action
-        viewModel.bind(User(), [
-            KPOneWayBinding(lbl, \.text, \.name),
-            KPOneWayBinding(field, \.text, \.email),
-            KPOneWayBinding(btn, \.isSelected, \.likeKiwi)
-        ])
+        viewModel.model = User()
+        viewModel.bind(KPOneWayBinding(\.name, lbl, \.text))
+        viewModel.bind(KPOneWayBinding(\.email, field, \.text))
+        viewModel.bind(KPOneWayBinding(\.likeKiwi, btn, \.isSelected))
         
         // Assert
         XCTAssertNotNil(viewModel.model)
-        
+
         XCTAssertNil(viewModel.model.name)
         XCTAssertNil(lbl.text)
-        
+
         XCTAssertNil(viewModel.model.email)
         XCTAssertEqual(field.text, UITextField().text)
-        
+
         XCTAssertFalse(viewModel.model.likeKiwi)
         XCTAssertFalse(btn.isSelected)
     }
@@ -52,11 +52,10 @@ class OneWayBindingTests: XCTestCase {
         let field = UITextField()
         
         // Action
-        viewModel.bind(User.random, [
-            KPOneWayBinding(lbl, \.text, \.name),
-            KPOneWayBinding(field, \.text, \.email)
-        ])
-        
+        viewModel.model = User.random
+        viewModel.bind(KPOneWayBinding(\.name, lbl, \.text))
+        viewModel.bind(KPOneWayBinding(\.email, field, \.text))
+
         // Assert
         XCTAssertEqual(lbl.text, viewModel.model.name)
         XCTAssertEqual(field.text, viewModel.model.email)
@@ -68,29 +67,28 @@ class OneWayBindingTests: XCTestCase {
         let field = UITextField()
         
         // Action
-        viewModel.bind(User(), [
-            KPOneWayBinding(lbl, \.text, \.name),
-            KPOneWayBinding(field, \.text, \.email)
-        ])
-        
+        viewModel.model = User()
+        viewModel.bind(KPOneWayBinding(\.name, lbl, \.text))
+        viewModel.bind(KPOneWayBinding(\.email, field, \.text))
+
         let text = String.random
-        
+
         viewModel.update(\.name, with: text)
-        
+
         // Assert
         XCTAssertEqual(viewModel.model.name, text)
         XCTAssertEqual(lbl.text, text)
-        
+
         // Action & Assert
         viewModel.update(\.name, with: nil)
         XCTAssertNil(viewModel.model.name)
         XCTAssertNil(lbl.text)
-        
+
         // Action & Assert
         viewModel.update(\.email, with: text)
         XCTAssertEqual(viewModel.model.email, text)
         XCTAssertEqual(field.text, text)
-        
+
         // Action & Assert
         viewModel.update(\.email, with: nil)
         XCTAssertNil(viewModel.model.email)
@@ -102,9 +100,8 @@ class OneWayBindingTests: XCTestCase {
         let lbl = UILabel()
         
         // Action
-        viewModel.bind(User(), [
-            lbl     <- \.name
-        ])
+        viewModel.model = User()
+        viewModel.bind( \.name => lbl )
         viewModel.unbind(\.name)
         
         // Assert
@@ -118,10 +115,11 @@ class OneWayBindingTests: XCTestCase {
         let view3 = UITextField()
         
         // Action
-        viewModel.bind(User.random, [
-            KPOneWayBinding(view1, \.text, \.name),
-            KPOneWayBinding(view2, \.text, \.name),
-            KPOneWayBinding(view3, \.text, \.name)
+        viewModel.model = User.random
+        viewModel.bind([
+            KPOneWayBinding(\.name, view1, \.text),
+            KPOneWayBinding(\.name, view2, \.text),
+            KPOneWayBinding(\.name, view3, \.text)
         ])
         
         // Assert
@@ -154,10 +152,11 @@ class OneWayBindingTests: XCTestCase {
         let lbl = UILabel()
         
         // Action
-        viewModel.bind(User.random, [
-            KPOneWayBinding(lbl, \.text, \.name),
-            KPOneWayBinding(lbl, \.text, \.email),
-            KPOneWayBinding(lbl, \.text, \.groupName)
+        viewModel.model = User.random
+        viewModel.bind( [
+            KPOneWayBinding(\.name, lbl, \.text),
+            KPOneWayBinding(\.email, lbl, \.text),
+            KPOneWayBinding(\.groupName, lbl, \.text)
         ])
         
         // Assert
@@ -182,9 +181,11 @@ class OneWayBindingTests: XCTestCase {
         let lbl = UILabel()
         
         // Action
-        viewModel.bind(User.random, [
-            KPOneWayBinding(lbl, \User.name, { $0.text = ($1 ?? "") + text })
-        ])
+        
+        viewModel.bind(
+            KPOneWayBinding(\.name, lbl, { $0.text = ($1 ?? "") + text })
+        )
+        viewModel.model = User.random
         
         // Assert
         XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text)
@@ -212,10 +213,11 @@ class OneWayBindingTests: XCTestCase {
         let field = UITextField()
         
         // Action
-        viewModel.bind(User.random, [
-            KPOneWayBinding(lbl, \User.name, { $0.text = ($1 ?? "") + text1 }),
-            KPOneWayBinding(field, \User.name, { $0.text = ($1 ?? "") + text2 })
+        viewModel.bind([
+            KPOneWayBinding(\.name, lbl, { $0.text = ($1 ?? "") + text1 }),
+            KPOneWayBinding(\User.name, field, { $0.text = ($1 ?? "") + text2 })
         ])
+        viewModel.model = User.random
         
         // Assert
         XCTAssertEqual(lbl.text, (viewModel.model.name ?? "") + text1)
@@ -240,9 +242,10 @@ class OneWayBindingTests: XCTestCase {
         let lbl = UILabel()
         
         // Action
-        viewModel.bind(User(), [
-            KPOneWayBinding(lbl, \User.name, { $0.layer.cornerRadius = CGFloat(Float($1 ?? "0") ?? 0) })
+        viewModel.bind([
+            KPOneWayBinding(\.name, lbl, { $0.layer.cornerRadius = CGFloat(Float($1 ?? "0") ?? 0) })
         ])
+        viewModel.model = User()
         
         // Assert
         XCTAssertEqual(lbl.layer.cornerRadius, 0)

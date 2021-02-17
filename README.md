@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var likeKiwiSwitcher: UISwitch!
     @IBOutlet weak var travelBtn:        UIButton!
     
-    lazy var userViewModel = KPDataBindingViewModel<User>()
+    lazy var userViewModel = KPDataBinding<User>()
     
     
     override func viewDidLoad() {
@@ -35,12 +35,12 @@ class ViewController: UIViewController {
         userViewModel.bind(initialData, [
             groupNameLbl     <-  \User.groupName,
          
-            nameField        <-> \User.name,
-            emailField       <-> \User.email,
+            nameField        <=> \User.name,
+            emailField       <=> \User.email,
 	    
-            activitySlider   <-> \User.aFloat,
-            likeKiwiSwitcher <-> \User.isOn,
-            travelBtn        <-> \User.isSelected,
+            activitySlider   <=> \User.aFloat,
+            likeKiwiSwitcher <=> \User.isOn,
+            travelBtn        <=> \User.isSelected,
 
             ageLbl           <~  (\User.age, { $0.text = "Your Age: \($1)" }),
             

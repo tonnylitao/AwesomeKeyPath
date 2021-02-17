@@ -20,10 +20,7 @@ public class KPBinding<Model> {
     var modelKeyPath: AnyKeyPath!
     var id: ViewID!
     
-    var updateModelAndView: ((inout Model, Any) -> ())!
-    var modelUpdateView: ((Model) -> ())!
-    
-    init() { }
+    var updateViewWithModel: ((Model) -> ())!
 }
 
 

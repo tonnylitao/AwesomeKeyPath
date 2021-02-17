@@ -20,11 +20,16 @@ struct User {
     
     var travel = false
     var hiking = false
-    var reading = false
     
     var info: String?
     
     var address = Address()
+}
+
+extension User: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        return "[groupName:\(groupName ?? "") name:\(name ?? "") email:\(email ?? "") age:\(age) activity:\(activity) likeKiwi:\(likeKiwi) travel:\(travel) hiking:\(hiking) info:\(info ?? "") address:\(address.address1 ?? "")]"
+    }
 }
 
 struct Address {
@@ -42,8 +47,7 @@ extension User {
             activity: Float.random(in: 0...1),
             likeKiwi: Bool.random(),
             travel: Bool.random(),
-            hiking: Bool.random(),
-            reading: Bool.random()
+            hiking: Bool.random()
         )
     }
 }
