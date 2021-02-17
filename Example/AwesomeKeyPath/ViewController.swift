@@ -65,13 +65,16 @@ class ViewController: UIViewController {
             .twoWayBind(\.travel, travelBtn)
             .twoWayBind(\.hiking, hikingBtn)
         
-        //same as
-        //        binding.bind(\.name <=> nameField)
-        //            .bind(\.email <=> emailField)
-        //            .bind(\.activity <=> activitySlider)
-        //            .bind(\.likeKiwi <=> likeKiwiSwitcher)
-        //            .bind(\.travel <=> travelBtn)
-        //            .bind(\.hiking <=> hikingBtn)
+        /*
+         same as
+         
+         binding.bind(\.name <=> nameField)
+         .bind(\.email <=> emailField)
+         .bind(\.activity <=> activitySlider)
+         .bind(\.likeKiwi <=> likeKiwiSwitcher)
+         .bind(\.travel <=> travelBtn)
+         .bind(\.hiking <=> hikingBtn)
+         */
         
         //data formatter and customised view render
         userBinding.twoWayBind(\.age, ageSteper, formatter: { view, modal in
