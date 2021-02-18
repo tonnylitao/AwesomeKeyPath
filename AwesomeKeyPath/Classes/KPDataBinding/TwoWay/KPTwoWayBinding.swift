@@ -12,6 +12,7 @@ import Foundation
 public class KPTwoWayBinding<Model>: KPBinding<Model> {
     
     var addTargetWithActionForEvent: ((Any?, Selector) -> ())!
+    var removeTargetWithActionForEvent: ((Any?, Selector) -> ())!
     
     var viewUpdateModel:             ((inout Model) -> ())!
     
@@ -35,6 +36,14 @@ public class KPTwoWayBinding<Model>: KPBinding<Model> {
             view.addTarget($0, action: $1, for: event)
             
             print("<=> : add target \(view.id)")
+        }
+        
+        removeTargetWithActionForEvent = { [weak view] in
+            guard let view = view else { return }
+
+            view.removeTarget($0, action: $1, for: event)
+
+            print("<=> : remove target \(view.id)")
         }
         
         id = view.id
@@ -72,6 +81,14 @@ public class KPTwoWayBinding<Model>: KPBinding<Model> {
             view.addTarget($0, action: $1, for: event)
             
             print("<~> : add target \(view.id)")
+        }
+        
+        removeTargetWithActionForEvent = { [weak view] in
+            guard let view = view else { return }
+
+            view.removeTarget($0, action: $1, for: event)
+
+            print("<~> : remove target \(view.id)")
         }
         
         id = view.id

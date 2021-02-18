@@ -58,12 +58,13 @@ class ViewController: UIViewController {
         /*
          Two way bind
          */
-        userBinding.twoWayBind(\.name, nameField)
-            .twoWayBind(\.email, emailField)
+        userBinding
+            .twoWayBind(\.name,     nameField)
+            .twoWayBind(\.email,    emailField)
             .twoWayBind(\.activity, activitySlider)
             .twoWayBind(\.likeKiwi, likeKiwiSwitcher)
-            .twoWayBind(\.travel, travelBtn)
-            .twoWayBind(\.hiking, hikingBtn)
+            .twoWayBind(\.travel,   travelBtn)
+            .twoWayBind(\.hiking,   hikingBtn)
         
         /*
          same as
@@ -90,7 +91,7 @@ class ViewController: UIViewController {
         userBinding.update(\.activity, with: Float.random(in: activitySlider.minimumValue...activitySlider.maximumValue))
     }
     
-    @IBAction func reset(_ sender: Any) {
+    @IBAction func random(_ sender: Any) {
         userBinding.model = .random
     }
     

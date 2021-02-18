@@ -14,7 +14,7 @@ import UIKit
 public class KPDataBinding<Model> {
     
     lazy private var _bindings = [KPBinding<Model>]()
-    lazy private var _twoWaybindings = [ViewID: [KPTwoWayBinding<Model>]]()
+//    lazy private var _twoWaybindings = [ViewID: [KPTwoWayBinding<Model>]]()
     
     public var model: Model! {
         didSet {
@@ -34,19 +34,22 @@ public class KPDataBinding<Model> {
         /*
          two way binding first
          */
-        _twoWaybindings[control.id]?.forEach { $0.viewUpdateModel(&model) }
+        var affectedKeyPaths = Set<AnyKeyPath>()
+        
+        _bindings
+            .filter { $0.id == control.id }
+            .compactMap { $0 as? KPTwoWayBinding }
+            .forEach {
+                $0.viewUpdateModel(&model)
+                affectedKeyPaths.insert($0.modelKeyPath)
+            }
         
         /*
          one way binding later
          */
-        let keyPaths = _bindings
-            .filter { $0.id == control.id }
-            .reduce(into: [AnyKeyPath]()) {
-                $0.append($1.modelKeyPath)
-            }
-        
         _bindings
-            .filter { $0.id != control.id && keyPaths.contains($0.modelKeyPath) }
+            .filter { affectedKeyPaths.contains($0.modelKeyPath) }
+            .compactMap { $0 as? KPOneWayBinding }
             .forEach { $0.updateViewWithModel(model) }
         
         print(model as Any)
@@ -98,10 +101,6 @@ extension KPDataBinding {
             assert(binding.id > 0)
             
             twoWayBinding.addTargetWithActionForEvent(self, #selector(viewChanged))
-            
-            var array = _twoWaybindings[binding.id] ?? []
-            array.append(twoWayBinding)
-            _twoWaybindings[binding.id] = array
         }
         
         return self
@@ -136,10 +135,11 @@ extension KPDataBinding {
 extension KPDataBinding {
     
     public func unbind<Value>(_ keyPath: KeyPath<Model, Value>) {
-        
-        let keyPaths = _bindings.filter { $0.modelKeyPath == keyPath }
+        _bindings
+            .filter { $0.modelKeyPath == keyPath }
+            .compactMap { $0 as? KPTwoWayBinding }
+            .forEach { $0.removeTargetWithActionForEvent(self, #selector(viewChanged)) }
         
         _bindings.removeAll { $0.modelKeyPath == keyPath }
-        keyPaths.forEach { _twoWaybindings.removeValue(forKey: $0.id) }
     }
 }
