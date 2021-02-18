@@ -19,8 +19,6 @@ public class KPBinding<Model> {
 
     var modelKeyPath: AnyKeyPath!
     var id: ViewID!
-    
-    var updateViewWithModel: ((Model) -> ())!
+
+    var updateViewWithModel: ((Model) -> (Bool))!
 }
-
-

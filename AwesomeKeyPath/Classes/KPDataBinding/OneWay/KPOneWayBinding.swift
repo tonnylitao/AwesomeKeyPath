@@ -20,11 +20,12 @@ public class KPOneWayBinding<Model>: KPBinding<Model> {
         modelKeyPath = mKeyPath
         
         updateViewWithModel = { [weak view] model in
-            guard let view = view else { return }
+            guard let view = view else { return false }
             
             view[keyPath: vKeyPath] = model[keyPath: mKeyPath]
             
             print("<- : view#\(view.id) <-", model[keyPath: mKeyPath])
+            return true
         }
     }
     
@@ -37,11 +38,12 @@ public class KPOneWayBinding<Model>: KPBinding<Model> {
         modelKeyPath = mKeyPath
         
         updateViewWithModel = { [weak view] model in
-            guard let view = view else { return }
+            guard let view = view else { return false }
             
             adapter(view, model[keyPath: mKeyPath])
             
             print("<~ : view#\(view.id) <~", model[keyPath: mKeyPath])
+            return true
         }
     }
 }
@@ -59,7 +61,7 @@ public extension KPSelfOneWayView {
      ]
      */
     
-    static func => <Model>(mKeyPath: WritableKeyPath<Model, Self.Value>, view: Self) -> KPBinding<Model> {
+    static func => <Model>(mKeyPath: WritableKeyPath<Model, Self.Value>, view: Self) -> KPOneWayBinding<Model> {
         KPOneWayBinding(mKeyPath, view, Self.keyPath)
     }
 }

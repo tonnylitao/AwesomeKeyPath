@@ -14,13 +14,11 @@ import UIKit
 public class KPDataBinding<Model> {
     
     lazy private var _bindings = [KPBinding<Model>]()
-//    lazy private var _twoWaybindings = [ViewID: [KPTwoWayBinding<Model>]]()
     
     public var model: Model! {
         didSet {
-            _bindings.forEach {
-                $0.updateViewWithModel(model)
-            }
+            //if view was removed, then remove the binding
+            _bindings = _bindings.filter { $0.updateViewWithModel(model) }
         }
     }
     
@@ -40,7 +38,7 @@ public class KPDataBinding<Model> {
             .filter { $0.id == control.id }
             .compactMap { $0 as? KPTwoWayBinding }
             .forEach {
-                $0.viewUpdateModel(&model)
+                _ = $0.viewUpdateModel(&model)
                 affectedKeyPaths.insert($0.modelKeyPath)
             }
         
@@ -50,7 +48,9 @@ public class KPDataBinding<Model> {
         _bindings
             .filter { affectedKeyPaths.contains($0.modelKeyPath) }
             .compactMap { $0 as? KPOneWayBinding }
-            .forEach { $0.updateViewWithModel(model) }
+            .forEach {
+                _ = $0.updateViewWithModel(model)
+            }
         
         print(model as Any)
     }
@@ -82,9 +82,9 @@ extension KPDataBinding {
     
     @discardableResult
     public func twoWayBind<V: KPTwoWayView, Value>(_ mKeyPath: WritableKeyPath<Model, Value>,
-                                             _ view: V,
-                                             formatter: @escaping (V, Model) -> Value,
-                                             render: @escaping (V, Value) -> ()) -> Self {
+                                                   _ view: V,
+                                                   formatter: @escaping (V, Model) -> Value,
+                                                   render: @escaping (V, Value) -> ()) -> Self {
         let binding = KPTwoWayBinding(mKeyPath, view, V.twoWayEvent, render, formatter)
         return bind(binding)
     }
@@ -92,10 +92,11 @@ extension KPDataBinding {
     
     @discardableResult
     public func bind(_ binding: KPBinding<Model>) -> Self {
-        _bindings.append(binding)
         if let m = model {
-            binding.updateViewWithModel(m)
+            _ = binding.updateViewWithModel(m)
         }
+        
+        _bindings.append(binding)
         
         if let twoWayBinding = binding as? KPTwoWayBinding<Model> {
             assert(binding.id > 0)
@@ -123,12 +124,9 @@ extension KPDataBinding {
     public func update<Value>(_ keyPath: WritableKeyPath<Model, Value>, with value: Value) -> Bool {
         model[keyPath: keyPath] = value
         
-        let bindings = _bindings.filter({ $0.modelKeyPath == keyPath })
-        bindings.forEach {
-            $0.updateViewWithModel(model)
-        }
+        let updated = _bindings.filter({ $0.modelKeyPath == keyPath && $0.updateViewWithModel(model) })
         
-        return !bindings.isEmpty
+        return !updated.isEmpty
     }
 }
 
