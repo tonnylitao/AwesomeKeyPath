@@ -19,32 +19,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameField:        UITextField!
     @IBOutlet weak var emailField:       UITextField!
     
-    @IBOutlet weak var ageLbl:           UILabel!
-    @IBOutlet weak var ageSteper:        UIStepper!
     @IBOutlet weak var activitySlider:   UISlider!
     @IBOutlet weak var likeKiwiSwitcher: UISwitch!
     @IBOutlet weak var travelBtn:        UIButton!
     
-    lazy var userViewModel = KPDataBinding<User>()
-    
+    lazy var userBinding = KPDataBinding(User())
     
     override func viewDidLoad() {
         
-        let initialData = User(groupName: "Save NZ Animals Group 1", name: "Tonny")
-        
-        userViewModel.bind(initialData, [
-            groupNameLbl     <-  \User.groupName,
+        userBinding.bind([
+            \.groupName  => groupNameLbl,
          
-            nameField        <=> \User.name,
-            emailField       <=> \User.email,
+            \.name       <=> nameField,
+            \.email      <=> emailField,
 	    
-            activitySlider   <=> \User.aFloat,
-            likeKiwiSwitcher <=> \User.isOn,
-            travelBtn        <=> \User.isSelected,
-
-            ageLbl           <~  (\User.age, { $0.text = "Your Age: \($1)" }),
-            
-            ageSteper        <~> (\User.age, { $0.value = Double($1) }, { view, _ in Int(view.value) }),
+            \.aFloat     <=> activitySlider,
+            \.isOn       <=> likeKiwiSwitcher,
+            \.isSelected <=> travelBtn
         ])
     }
 ...
@@ -56,7 +47,7 @@ KeyPath transforms into closure automatically when type casting.
 
 ```swift
     @IBAction func submit(_ sender: Any) {
-        let data = userViewModel.model
+        let data = userBinding.model
     
         guard data.validate(\.name.isSome, \.name!.isNotEmpty) else {
             nameField.becomeFirstResponder()
